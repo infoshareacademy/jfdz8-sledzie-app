@@ -1,0 +1,38 @@
+.login-bar {
+    height: 50px;
+    width: 100%;
+    background: #3b3b3b;
+    border-bottom: 1px solid #626262;
+}
+.btn-sign-in {
+    position: relative;
+    left: 10%;
+    width: 120px;
+    height: 100%;
+    background: #3b3b3b;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    text-transform: uppercase;
+    border-left: 1px solid #626262;
+    border-right: 1px solid #626262;
+}
+.btn-sign-in:active, .btn-sign-in:focus {
+    outline: none;
+    background: #000;
+}
+.btn-sign-in:hover {
+    background: #000;
+}
+.logo-bar-container {
+    display: block;
+    margin: auto;
+    margin-top: 4px;
+    width: 200px;
+    height: 100%;
+    background: #fff;
+}
+.login-bar-logo {
+    width: 100%;
+    height: auto;
+}

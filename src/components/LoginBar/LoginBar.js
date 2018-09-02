@@ -9,9 +9,18 @@ class LoginBar extends Component {
     enabled: false
   }
 
-  handleClick = () => {
+  handleClick = (event) => {
+    event.stopPropagation();
     this.setState({
       enabled: !this.state.enabled
+    })
+  }
+
+  componentDidMount() {
+    window.addEventListener('click', () => {
+      this.setState({
+        enabled: false
+      })
     })
   }
 
@@ -22,7 +31,7 @@ class LoginBar extends Component {
           <button className="btn-sign-in" onClick={this.handleClick}>Zapisz się</button>
         </div>
         {this.state.enabled && <LoginForm />}
-        <div className="logo-container">
+        <div className="logo-bar-container">
           <img className="login-bar-logo" src={logo} alt=""/>
         </div>
       </fragment>

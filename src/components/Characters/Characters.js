@@ -26,40 +26,39 @@ class Characters extends Component {
           <Link to="/hero/thanos">Thanos</Link>
           <Link to="/hero/captainamerica">Captain America</Link>
           <Link to="/hero/blackwidow">Black Widow</Link>
-
-          <Route exact path="/" render={() => <p> Main Page</p> } />
-          <Route path="/deadpool"
-                 render={() => <Hero id={1009268}/>}
-          />
-          <Route path="/ironman"
-                 render={() => <Hero id={1009368}/> }
-          />
-          <Route path="/doctorstrange"
-                 render={() => <Hero id={1009282}/>}
-          />
-          <Route path="/blackpanther"
-                 render={() => <Hero id={1009187}/> }
-          />
-          <Route path="/hulk"
-                 render={() =><Hero id={1009351}/> }
-          />
-          <Route path="/spiderman"
-                 render={() => <Hero id={1009610}/> }
-          />
-          <Route path="/thor"
-                 render={() => <Hero id={1009664}/>}
-          />
-          <Route path="/thanos"
-                 render={() => <Hero id={1009652}/> }
-          />
-          <Route path="/captainamerica"
-                 render={() => <Hero id={1009220}/>}
-          />
-          <Route path="/blackwidow"
-                 render={() => <Hero id={1009189}/>}
-          />
-
         </ul>
+
+        <Route exact path="/" render={() => <p> Main Page</p> } />
+        <Route path="/hero/deadpool" render={() => <Hero id={1009268}/>}/>
+        <Route path="/hero/ironman"
+               render={() => <Hero id={1009368}/> }
+        />
+        <Route path="/hero/doctorstrange"
+               render={() => <Hero id={1009282}/>}
+        />
+        <Route path="/hero/blackpanther"
+               render={() => <Hero id={1009187}/> }
+        />
+        <Route path="/hero/hulk"
+               render={() =><Hero id={1009351}/> }
+        />
+        <Route path="/hero/spiderman"
+               render={() => <Hero id={1009610}/> }
+        />
+        <Route path="/hero/thor"
+               render={() => <Hero id={1009664}/>}
+        />
+        <Route path="/hero/thanos"
+               render={() => <Hero id={1009652}/> }
+        />
+        <Route path="/hero/captainamerica"
+               render={() => <Hero id={1009220}/>}
+        />
+        <Route path="/hero/blackwidow"
+               render={() => <Hero id={1009189}/>}
+        />
+
+
       </div>
       </Router>
 

@@ -1,4 +1,13 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
+
+const Img = styled.img`
+  width: 30%;
+  height: auto;
+  margin-left: 50px;
+  padding-top: 40px;
+`
+
 
 class Hero extends Component {
 
@@ -16,8 +25,7 @@ class Hero extends Component {
     const path = this.state.hero && `${this.state.hero.thumbnail.path}.${this.state.hero.thumbnail.extension}`
     return (
       <div>
-        <img src={path} alt="The hero"/>
-
+        <Img src={path} alt="The hero"/>
       </div>
     )
   }

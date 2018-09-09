@@ -1,67 +1,97 @@
 import React, { Component } from 'react';
-import './Characters.css'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import Hero from '../Hero/Hero'
+import { Link } from 'react-router-dom'
+import background from './bg4.png'
 
+import styled from 'styled-components'
+
+const Header = styled.header`
+  height: 250px;
+  width: 100%;
+  overflow: hidden;
+  position:relative;
+
+`
+const Img = styled.img`
+  object-fit: contain;
+  position: absolute;
+  width: 100%;
+  transition: all 1s ease-in-out;
+    
+    &:hover {
+    transform: scale(1.1);
+    opacity: 0.7 
+  }
+`
+const H1 = styled.h1`
+  position: relative;
+  top: 40%;
+  text-align: center;
+  color: #F8F8FF;
+  font-weight: bolder;
+  font-size: 50px;
+`
+
+const Div = styled.div`
+  margin-top: 40px;
+`
+const Ul = styled.div`
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bolder;
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  padding-right: 15px;  
+  padding-top: 15px;
+  font-size: 25px
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  
+    &:hover {
+    color: red;
+    }
+`
+const Button = styled.button`
+
+  text-transform: uppercase;
+  font-size: 15px;
+  color: red;
+  font-size: 25px;
+  font-weight: bolder;
+  margin-left: 15px;
+  background: white;
+`
 class Characters extends Component {
-
-  // state = {
-  //   characters: []
-  // }
 
   render() {
     return (
-      <Router>
-      <div>
-        <h1>Characters List</h1>
-        <ul>
-          <Link to="/">Main</Link>
-          <Link to="/hero/deadpool">Deadpool</Link>
-          <Link to="/hero/ironman">Iron Man</Link>
-          <Link to="/hero/doctorstrange">Doctor Strange</Link>
-          <Link to="/hero/blackpanther">Black Panther</Link>
-          <Link to="/hero/hulk">Hulk (Bruce Banner)</Link>
-          <Link to="/hero/spiderman">Spider-Man</Link>
-          <Link to="/hero/thor">Thor</Link>
-          <Link to="/hero/thanos">Thanos</Link>
-          <Link to="/hero/captainamerica">Captain America</Link>
-          <Link to="/hero/blackwidow">Black Widow</Link>
-
-          <Route exact path="/" render={() => <p> Main Page</p> } />
-          <Route path="/deadpool"
-                 render={() => <Hero id={1009268}/>}
-          />
-          <Route path="/ironman"
-                 render={() => <Hero id={1009368}/> }
-          />
-          <Route path="/doctorstrange"
-                 render={() => <Hero id={1009282}/>}
-          />
-          <Route path="/blackpanther"
-                 render={() => <Hero id={1009187}/> }
-          />
-          <Route path="/hulk"
-                 render={() =><Hero id={1009351}/> }
-          />
-          <Route path="/spiderman"
-                 render={() => <Hero id={1009610}/> }
-          />
-          <Route path="/thor"
-                 render={() => <Hero id={1009664}/>}
-          />
-          <Route path="/thanos"
-                 render={() => <Hero id={1009652}/> }
-          />
-          <Route path="/captainamerica"
-                 render={() => <Hero id={1009220}/>}
-          />
-          <Route path="/blackwidow"
-                 render={() => <Hero id={1009189}/>}
-          />
-
-        </ul>
-      </div>
-      </Router>
+      <React.Fragment>
+        <Header>
+          <Img src={background} alt=""/>
+          <H1>Superbohaterowie</H1>
+        </Header>
+        <Div>
+          <Ul>
+            <StyledLink to="/heros/hero/deadpool">Deadpool</StyledLink>
+            <StyledLink to="/heros/hero/ironman">Iron Man</StyledLink>
+            <StyledLink to="/heros/hero/doctorstrange">Doctor Strange</StyledLink>
+            <StyledLink to="/heros/hero/blackpanther">Black Panther</StyledLink>
+            <StyledLink to="/heros/hero/hulk">Hulk</StyledLink>
+            <StyledLink to="/heros/hero/spiderman">Spider-Man</StyledLink>
+            <StyledLink to="/heros/hero/thor">Thor</StyledLink>
+            <StyledLink to="/heros/hero/thanos">Thanos</StyledLink>
+            <StyledLink to="/heros/hero/captainamerica">Captain America</StyledLink>
+            <StyledLink to="/heros/hero/blackwidow">Black Widow</StyledLink>
+            <StyledLink to="/heros/hero/loki">Loki</StyledLink>
+            <StyledLink to="/"><Button>Powrót</Button></StyledLink> <br/>
+          </Ul>
+        </Div>
+     </React.Fragment>
 
     )
   }

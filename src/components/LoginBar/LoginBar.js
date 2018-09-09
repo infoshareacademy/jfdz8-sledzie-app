@@ -10,7 +10,7 @@ class LoginBar extends Component {
   }
 
   handleClick = (event) => {
-    event.stopPropagation();
+    event.stopPropagation()
     this.setState({
       enabled: !this.state.enabled
     })
@@ -26,7 +26,7 @@ class LoginBar extends Component {
 
   render() {
     return (
-      <fragment>
+      <React.Fragment>
         <div className="login-bar">
           <button className="btn-sign-in" onClick={this.handleClick}>Zapisz się</button>
         </div>
@@ -36,8 +36,8 @@ class LoginBar extends Component {
             <img className="login-bar-logo" src={logo} alt=""/>
           </a>
         </div>
-      </fragment>
-    );
+      </React.Fragment>
+    )
   }
 }
 

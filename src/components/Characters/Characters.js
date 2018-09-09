@@ -1,17 +1,34 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import background2 from './background.jpg'
-import Hero from '../Hero/Hero'
+import { Link } from 'react-router-dom'
+import background from './bg4.png'
+
 import styled from 'styled-components'
 
 const Header = styled.header`
   height: 250px;
   width: 100%;
   overflow: hidden;
-`
+  position:relative;
 
+`
 const Img = styled.img`
-  object-fit: contain
+  object-fit: contain;
+  position: absolute;
+  width: 100%;
+  transition: all 1s ease-in-out;
+    
+    &:hover {
+    transform: scale(1.1);
+    opacity: 0.7 
+  }
+`
+const H1 = styled.h1`
+  position: relative;
+  top: 40%;
+  text-align: center;
+  color: #F8F8FF;
+  font-weight: bolder;
+  font-size: 50px;
 `
 
 const Div = styled.div`
@@ -55,62 +72,25 @@ class Characters extends Component {
     return (
       <React.Fragment>
         <Header>
-          <Img src={background2} alt=""/>
+          <Img src={background} alt=""/>
+          <H1>Superbohaterowie</H1>
         </Header>
-        <Router>
         <Div>
           <Ul>
-            <StyledLink to="/hero/deadpool">Deadpool</StyledLink>
-            <StyledLink to="/hero/ironman">Iron Man</StyledLink>
-            <StyledLink to="/hero/doctorstrange">Doctor Strange</StyledLink>
-            <StyledLink to="/hero/blackpanther">Black Panther</StyledLink>
-            <StyledLink to="/hero/hulk">Hulk</StyledLink>
-            <StyledLink to="/hero/spiderman">Spider-Man</StyledLink>
-            <StyledLink to="/hero/thor">Thor</StyledLink>
-            <StyledLink to="/hero/thanos">Thanos</StyledLink>
-            <StyledLink to="/hero/captainamerica">Captain America</StyledLink>
-            <StyledLink to="/hero/blackwidow">Black Widow</StyledLink>
-            <StyledLink to="/hero/loki">Loki</StyledLink>
+            <StyledLink to="/heros/hero/deadpool">Deadpool</StyledLink>
+            <StyledLink to="/heros/hero/ironman">Iron Man</StyledLink>
+            <StyledLink to="/heros/hero/doctorstrange">Doctor Strange</StyledLink>
+            <StyledLink to="/heros/hero/blackpanther">Black Panther</StyledLink>
+            <StyledLink to="/heros/hero/hulk">Hulk</StyledLink>
+            <StyledLink to="/heros/hero/spiderman">Spider-Man</StyledLink>
+            <StyledLink to="/heros/hero/thor">Thor</StyledLink>
+            <StyledLink to="/heros/hero/thanos">Thanos</StyledLink>
+            <StyledLink to="/heros/hero/captainamerica">Captain America</StyledLink>
+            <StyledLink to="/heros/hero/blackwidow">Black Widow</StyledLink>
+            <StyledLink to="/heros/hero/loki">Loki</StyledLink>
             <StyledLink to="/"><Button>Powrót</Button></StyledLink> <br/>
           </Ul>
-
-          <Route exact path="/"/>
-          <Route path="/hero/deadpool"
-                 render={() => <Hero id={1009268}/>}
-          />
-          <Route path="/hero/ironman"
-                 render={() => <Hero id={1009368}/>}
-          />
-          <Route path="/hero/doctorstrange"
-                 render={() => <Hero id={1009282}/>}
-          />
-          <Route path="/hero/blackpanther"
-                 render={() => <Hero id={1009187}/>}
-          />
-          <Route path="/hero/hulk"
-                 render={() =><Hero id={1009351}/>}
-          />
-          <Route path="/hero/spiderman"
-                 render={() => <Hero id={1009610}/>}
-          />
-          <Route path="/hero/thor"
-                 render={() => <Hero id={1009664}/>}
-          />
-          <Route path="/hero/thanos"
-                 render={() => <Hero id={1009652}/>}
-          />
-          <Route path="/hero/captainamerica"
-                 render={() => <Hero id={1009220}/>}
-          />
-          <Route path="/hero/blackwidow"
-                 render={() => <Hero id={1009189}/>}
-          />
-          <Route path="/hero/loki"
-                 render={() => <Hero id={1009407}/>}
-          />
         </Div>
-
-       </Router>
      </React.Fragment>
 
     )

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { database } from '../../firebase';
 
 const Img = styled.img`
   width: 30%;
@@ -15,18 +16,31 @@ class Hero extends Component {
     hero: null
   }
 
+
   componentDidMount () {
     fetch(`https://gateway.marvel.com:443/v1/public/characters/${this.props.id}?apikey=5b4ca4fb9704024334914e17aabbb5a3`)
       .then(response => response.json())
-      .then(payload => this.setState({hero: payload.data.results[0]}))
+      .then(payload => this.setState({hero: payload.data.results[0]}));
+
+
+
+
   }
+
+
 
   render() {
     const path = this.state.hero && `${this.state.hero.thumbnail.path}.${this.state.hero.thumbnail.extension}`
+    const name = this.props.name
     return (
-      <div>
-        <Img src={path} alt="The hero"/>
-      </div>
+      <React.Fragment>
+        <div>
+          <h1>{name}</h1>
+        </div>
+        <div>
+          <Img src={path} alt="The hero"/>
+        </div>
+        </React.Fragment>
     )
   }
 }

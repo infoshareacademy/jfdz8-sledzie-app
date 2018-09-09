@@ -4,6 +4,7 @@
     width: 400px;
     height: 360px;
     background: #000;
+    z-index: 10;
 }
 .logo-form-container {
     margin: auto;

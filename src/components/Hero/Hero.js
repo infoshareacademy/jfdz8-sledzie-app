@@ -13,7 +13,8 @@ const Img = styled.img`
 class Hero extends Component {
 
   state = {
-    hero: null
+    hero: null,
+    details: null
   }
 
 
@@ -22,12 +23,18 @@ class Hero extends Component {
       .then(response => response.json())
       .then(payload => this.setState({hero: payload.data.results[0]}));
 
-
-
+    this.getDescriptions();
 
   }
 
-
+  getDescriptions = () => {
+    database.ref(`/heroes/${this.props.id}`)
+      .once('value')
+      .then(snapshot => {
+        debugger;
+        this.setState({details: snapshot.val()});
+      });
+  }
 
   render() {
     const path = this.state.hero && `${this.state.hero.thumbnail.path}.${this.state.hero.thumbnail.extension}`
@@ -36,6 +43,7 @@ class Hero extends Component {
       <React.Fragment>
         <div>
           <h1>{name}</h1>
+          <p>{ (this.state.details && this.state.details.description) || 'Work in progess' }</p>
         </div>
         <div>
           <Img src={path} alt="The hero"/>

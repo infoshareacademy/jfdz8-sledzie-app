@@ -32,7 +32,9 @@ class LoginBar extends Component {
         </div>
         {this.state.enabled && <LoginForm />}
         <div className="logo-bar-container">
-          <img className="login-bar-logo" src={logo} alt=""/>
+          <a href="#start">
+            <img className="login-bar-logo" src={logo} alt=""/>
+          </a>
         </div>
       </React.Fragment>
     )

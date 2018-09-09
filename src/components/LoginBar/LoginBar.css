@@ -35,4 +35,5 @@
 .login-bar-logo {
     width: 100%;
     height: auto;
+    cursor: pointer;
 }

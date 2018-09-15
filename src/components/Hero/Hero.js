@@ -124,7 +124,7 @@ class Hero extends Component {
             <StyledLink to="/heros/hero/thor">Thor</StyledLink>
             <StyledLink to="/heros/hero/thanos">Thanos</StyledLink>
             <StyledLink to="/heros/hero/captainamerica">Kapitan Ameryka</StyledLink>
-            <StyledLink to="/heros/hero/blackwidow">Black Widow</StyledLink>
+            <StyledLink to="/heros/hero/blackwidow">Czarna Wdowa</StyledLink>
           </Ul>
         <Container>
           <DivOne>

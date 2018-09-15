@@ -52,12 +52,20 @@ class App extends Component {
               />
               <Route
                 path="/heros/hero/captainamerica"
-                render={() => <Hero id={1009220} name={"Captain America"}/>}
+                render={() => <Hero id={1009220} name={"Kapitan Ameryka"}/>}
               />
               <Route
                 path="/heros/hero/blackwidow"
-                render={() => <Hero id={1009189} name={"Black Widow"}/>}
+                render={() => <Hero id={1009189} name={"Czarna Wdowa"}/>}
               />
+              {/*<Route*/}
+                {/*path="/movies"*/}
+                {/*render={() => <Movies/>}*/}
+              {/*/>*/}
+              {/*<Route*/}
+                {/*path="/comics"*/}
+                {/*render={() => <Comics/>}*/}
+              {/*/>*/}
             </Fragment>
           </Router>
         </Fragment>

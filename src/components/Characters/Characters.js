@@ -48,7 +48,6 @@ const H1 = styled.h1`
   font-weight: bolder;
   font-size: 50px;
 `
-
 const Div = styled.div`
   margin-top: 20px;
   margin-bottom: 20px;
@@ -65,15 +64,14 @@ const Button = styled.button`
   margin-top: 20px;
   background: white;
  
-  &:focus {
-   outline:0;
-  }
-
-  &:hover {
-  font-weight: bolder
-  }
+    &:focus {
+     outline:0;
+    }
+  
+    &:hover {
+    font-weight: bolder
+    }
 `
-
 class Characters extends Component {
 
   state = {
@@ -87,7 +85,6 @@ class Characters extends Component {
     imgCaptainAmerica: captainamerica,
     imgBlackWidow: blackwidow
   }
-
 
   render() {
     return (
@@ -145,7 +142,6 @@ class Characters extends Component {
           </Link>
         </Div>
      </React.Fragment>
-
     )
   }
 }

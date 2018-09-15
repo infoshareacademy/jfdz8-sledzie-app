@@ -1,7 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
-import background from './bg4.png'
-
+import background from './images/bg4.png'
+import './Characters.css'
+import deadpool from './images/Deadpool.png'
+import deadpoolHover from './images/DeadpoolHover.png'
+import ironman from './images/Ironman.png'
+import ironmanHover from './images/IronmanHover.png'
+import spiderman from './images/Spiderman.png'
+import spidermanHover from './images/SpidermanHover.png'
+import blackwidow from './images/BlackWidow.png'
+import blackwidowHover from './images/BlackWidowHover.png'
+import hulk from './images/Hulk.png'
+import hulkHover from './images/HulkHover.png'
+import captainamerica from './images/CaptainAmerica.png'
+import captainamericaHover from './images/CaptainAmericaHover.png'
+import thanos from './images/Thanos.png'
+import thanosHover from './images/ThanosHover.png'
+import thor from './images/Thor.png'
+import thorHover from './images/ThorHover.png'
+import drstrange from './images/DrStrange.png'
+import drstrangeHover from './images/DrStrangeHover.png'
 import styled from 'styled-components'
 
 const Header = styled.header`
@@ -32,41 +50,44 @@ const H1 = styled.h1`
 `
 
 const Div = styled.div`
-  margin-top: 40px;
-`
-const Ul = styled.div`
-  text-align: center;
   margin-top: 20px;
-  font-weight: bolder;
-`
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
-  color: black;
-  padding-right: 15px;  
-  padding-top: 15px;
-  font-size: 25px
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
-  
-    &:hover {
-    color: red;
-    }
+  margin-bottom: 20px;
+  display:flex;
+  align-items:center;
+  justify-content: space-around;  
 `
 const Button = styled.button`
-
   text-transform: uppercase;
-  font-size: 15px;
-  color: red;
-  font-size: 25px;
-  font-weight: bolder;
+  color: black;
+  font-size: 20px;
+  font-weight: lighter;
   margin-left: 15px;
+  margin-top: 20px;
   background: white;
+ 
+  &:focus {
+   outline:0;
+  }
+
+  &:hover {
+  font-weight: bolder
+  }
 `
+
 class Characters extends Component {
+
+  state = {
+    imgDeadpool: deadpool,
+    imgIronMan: ironman,
+    imgDrStrange: drstrange,
+    imgHulk: hulk,
+    imgSpiderman: spiderman,
+    imgThor: thor,
+    imgThanos: thanos,
+    imgCaptainAmerica: captainamerica,
+    imgBlackWidow: blackwidow
+  }
+
 
   render() {
     return (
@@ -75,21 +96,53 @@ class Characters extends Component {
           <Img src={background} alt=""/>
           <H1>Superbohaterowie</H1>
         </Header>
+        <Link to="/"><Button><span className="arrow left"/>Powrót</Button></Link>
         <Div>
-          <Ul>
-            <StyledLink to="/heros/hero/deadpool">Deadpool</StyledLink>
-            <StyledLink to="/heros/hero/ironman">Iron Man</StyledLink>
-            <StyledLink to="/heros/hero/doctorstrange">Doctor Strange</StyledLink>
-            <StyledLink to="/heros/hero/blackpanther">Black Panther</StyledLink>
-            <StyledLink to="/heros/hero/hulk">Hulk</StyledLink>
-            <StyledLink to="/heros/hero/spiderman">Spider-Man</StyledLink>
-            <StyledLink to="/heros/hero/thor">Thor</StyledLink>
-            <StyledLink to="/heros/hero/thanos">Thanos</StyledLink>
-            <StyledLink to="/heros/hero/captainamerica">Captain America</StyledLink>
-            <StyledLink to="/heros/hero/blackwidow">Black Widow</StyledLink>
-            <StyledLink to="/heros/hero/loki">Loki</StyledLink>
-            <StyledLink to="/"><Button>Powrót</Button></StyledLink> <br/>
-          </Ul>
+          <Link to="/heros/hero/deadpool"><img src={this.state.imgDeadpool}
+                                               alt=""
+                                               onMouseOver={() => this.setState({imgDeadpool: deadpoolHover})}
+                                               onMouseOut={() => this.setState({imgDeadpool: deadpool})}/>
+          </Link>
+          <Link to="/heros/hero/ironman"><img src={this.state.imgIronMan}
+                                              alt=""
+                                              onMouseOver={() => this.setState({imgIronMan: ironmanHover})}
+                                              onMouseOut={() => this.setState({imgIronMan: ironman})}/>
+          </Link>
+          <Link to="/heros/hero/doctorstrange"><img src={this.state.imgDrStrange}
+                                                    alt=""
+                                                    onMouseOver={() => this.setState({imgDrStrange: drstrangeHover})}
+                                                    onMouseOut={() => this.setState({imgDrStrange: drstrange})}/>
+          </Link>
+          <Link to="/heros/hero/hulk"><img src={this.state.imgHulk}
+                                           alt=""
+                                           onMouseOver={() => this.setState({imgHulk: hulkHover})}
+                                           onMouseOut={() => this.setState({imgHulk: hulk})}/>
+          </Link>
+          <Link to="/heros/hero/spiderman"><img src={this.state.imgSpiderman}
+                                                alt=""
+                                                onMouseOver={() => this.setState({imgSpiderman: spidermanHover})}
+                                                onMouseOut={() => this.setState({imgSpiderman: spiderman})}/>
+          </Link>
+          <Link to="/heros/hero/thor"><img src={this.state.imgThor}
+                                           alt=""
+                                           onMouseOver={() => this.setState({imgThor: thorHover})}
+                                           onMouseOut={() => this.setState({imgThor: thor})}/>
+          </Link>
+          <Link to="/heros/hero/thanos"><img src={this.state.imgThanos}
+                                             alt=""
+                                             onMouseOver={() => this.setState({imgThanos: thanosHover})}
+                                             onMouseOut={() => this.setState({imgThanos: thanos})}/>
+          </Link>
+          <Link to="/heros/hero/captainamerica"><img src={this.state.imgCaptainAmerica}
+                                                     alt=""
+                                                     onMouseOver={() => this.setState({imgCaptainAmerica: captainamericaHover})}
+                                                     onMouseOut={() => this.setState({imgCaptainAmerica: captainamerica})}/>
+          </Link>
+          <Link to="/heros/hero/blackwidow"><img src={this.state.imgBlackWidow}
+                                                 alt=""
+                                                 onMouseOver={() => this.setState({imgBlackWidow: blackwidowHover})}
+                                                 onMouseOut={() => this.setState({imgBlackWidow: blackwidow})}/>
+          </Link>
         </Div>
      </React.Fragment>
 

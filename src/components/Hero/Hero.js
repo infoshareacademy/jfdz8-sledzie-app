@@ -1,14 +1,80 @@
 import React, { Component } from 'react'
+import './Hero.css'
 import styled from 'styled-components'
 import { database } from '../../firebase';
+import {Link} from "react-router-dom";
 
-const Img = styled.img`
-  width: 30%;
-  height: auto;
-  margin-left: 50px;
-  padding-top: 40px;
+const Container = styled.div`
+  width: 80%;
 `
 
+const DivOne = styled.div`
+  width: 40%;
+  height: 600px;
+  float: left
+`
+const DivTwo = styled.div`
+  height: 600px;
+`
+
+const Img = styled.img`
+  width: 80%;
+  height: auto;
+  margin-left: 50px;
+  padding-top: 30px;
+`
+
+const H1 = styled.h1`
+  margin-left: -250px;
+  margin-top: 65px;
+`
+
+const P = styled.p`
+  margin-left: -250px;
+  margin-top: 15px;
+  font-size: 19px;
+  font-family: Montserrat, sans-serif;
+  text-align: justify
+`
+
+const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: black;
+  padding-right: 15px;  
+  padding-top: 15px;
+  font-size: 25px
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  
+    &:hover {
+    color: red;
+    }
+`
+
+const Ul = styled.div`
+  text-align: center;
+  font-weight: bolder;
+`
+
+const Button = styled.button`
+  text-transform: uppercase;
+  color: black;
+  font-size: 20px;
+  font-weight: lighter;
+  margin-left: 15px;
+  background: white;
+ 
+  &:focus {
+   outline:0;
+  }
+
+  &:hover {
+  font-weight: bolder
+  }
+`
 
 class Hero extends Component {
 
@@ -31,7 +97,6 @@ class Hero extends Component {
     database.ref(`/heroes/${this.props.id}`)
       .once('value')
       .then(snapshot => {
-        debugger;
         this.setState({details: snapshot.val()});
       });
   }
@@ -41,13 +106,27 @@ class Hero extends Component {
     const name = this.props.name
     return (
       <React.Fragment>
-        <div>
-          <h1>{name}</h1>
-          <p>{ (this.state.details && this.state.details.description) || 'Work in progess' }</p>
-        </div>
-        <div>
-          <Img src={path} alt="The hero"/>
-        </div>
+        <Link to="/heroes"><Button><span className="arrow left"/>Cofnij</Button></Link>
+          <Ul>
+            <StyledLink to="/heros/hero/deadpool">Deadpool</StyledLink>
+            <StyledLink to="/heros/hero/ironman">Iron Man</StyledLink>
+            <StyledLink to="/heros/hero/doctorstrange">Doctor Strange</StyledLink>
+            <StyledLink to="/heros/hero/hulk">Hulk</StyledLink>
+            <StyledLink to="/heros/hero/spiderman">Spider-Man</StyledLink>
+            <StyledLink to="/heros/hero/thor">Thor</StyledLink>
+            <StyledLink to="/heros/hero/thanos">Thanos</StyledLink>
+            <StyledLink to="/heros/hero/captainamerica">Captain America</StyledLink>
+            <StyledLink to="/heros/hero/blackwidow">Black Widow</StyledLink>
+          </Ul>
+        <Container>
+          <DivOne>
+            <Img className="hero-pic" src={path} alt="The hero"/>
+          </DivOne>
+          <DivTwo>
+            <H1 className="hero-name">{name}<button className="fav-btn"><i className="fab fa-gratipay" title="Dodaj do ulubionych"/></button></H1>
+            <P className="hero-desc">{ (this.state.details && this.state.details.description) || 'Work in progess' }</P>
+          </DivTwo>
+        </Container>
         </React.Fragment>
     )
   }

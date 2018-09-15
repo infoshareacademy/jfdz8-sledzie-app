@@ -10,7 +10,7 @@ class NavMenu extends Component {
       <Fragment>
         <div className='nav'>
           <ul className='nav-bar'>
-            <li className='nav-bar-item'><Link to='/heros'>SUPERBOHATEROWIE</Link></li>
+            <li className='nav-bar-item'><Link to='/heroes'>SUPERBOHATEROWIE</Link></li>
             <li className='nav-bar-item'>menu 2</li>
             <li className='nav-bar-item'>menu 3</li>
             <li className='nav-bar-item'>menu 4</li>

@@ -1,0 +1,13 @@
+.fav-btn {
+    float: right;
+    color: #CC0000;
+    background-color: white;
+}
+
+.fav-btn:focus {
+    outline: 0
+}
+
+.fab {
+    font-size: 35px
+}

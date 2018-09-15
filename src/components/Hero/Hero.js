@@ -21,7 +21,7 @@ const Img = styled.img`
   width: 80%;
   height: auto;
   margin-left: 50px;
-  padding-top: 30px;
+  margin-top: 50px;
 `
 
 const H1 = styled.h1`

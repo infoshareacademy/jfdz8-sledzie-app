@@ -6,8 +6,10 @@ import LoginBar from '../LoginBar/LoginBar'
 import NavMenu from '../NavMenu/NavMenu';
 import Characters from "../Characters/Characters";
 import Hero from '../Hero/Hero'
+import Comics from '../Comics/Comics'
 
 class App extends Component {
+
   render() {
 
     return (
@@ -58,13 +60,13 @@ class App extends Component {
                 path="/heros/hero/blackwidow"
                 render={() => <Hero id={1009189} name={"Czarna Wdowa"}/>}
               />
+              <Route
+                path="/comics"
+                render={() => <Comics/>}
+              />
               {/*<Route*/}
                 {/*path="/movies"*/}
                 {/*render={() => <Movies/>}*/}
-              {/*/>*/}
-              {/*<Route*/}
-                {/*path="/comics"*/}
-                {/*render={() => <Comics/>}*/}
               {/*/>*/}
             </Fragment>
           </Router>

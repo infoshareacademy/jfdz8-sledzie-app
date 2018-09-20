@@ -58,7 +58,7 @@ const Div = styled.div`
 const Button = styled.button`
   text-transform: uppercase;
   color: black;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: lighter;
   margin-left: 15px;
   margin-top: 20px;

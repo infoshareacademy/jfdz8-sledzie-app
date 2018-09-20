@@ -56,7 +56,7 @@ const Ul = styled.div`
 const Button = styled.button`
   text-transform: uppercase;
   color: black;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: lighter;
   margin-left: 15px;
   background: white;
@@ -142,7 +142,7 @@ class Hero extends Component {
             <P className="hero-desc">{ (this.state.details && this.state.details.description) || 'Work in progess' }</P>
           </DivTwo>
         </Container>
-        </React.Fragment>
+      </React.Fragment>
     )
   }
 }

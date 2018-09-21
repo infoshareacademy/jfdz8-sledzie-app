@@ -139,7 +139,7 @@ class Hero extends Component {
                 <i className="fab fa-gratipay" title="Dodaj do ulubionych"/>
               </button>
             </H1>
-            <P className="hero-desc">{ (this.state.details && this.state.details.description) || 'Work in progess' }</P>
+            <P className="hero-desc">{ (this.state.details && this.state.details.description) || 'Work in progress' }</P>
           </DivTwo>
         </Container>
       </React.Fragment>

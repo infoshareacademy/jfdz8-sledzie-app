@@ -11,7 +11,6 @@ import Comics from '../Comics/Comics'
 class App extends Component {
 
   render() {
-
     return (
       <div className="App">
         <Fragment>
@@ -19,51 +18,95 @@ class App extends Component {
             <Fragment>
               <LoginBar />
               <NavMenu />
+
               <Route exact path="/"/>
               <Route
                 path="/heroes"
                 render={() => <Characters />}
               />
               <Route
-                path="/heros/hero/deadpool"
+                path="/hero/1009268"
                 render={() => <Hero id={1009268} name={"Deadpool"}/>}
               />
               <Route
-                path="/heros/hero/ironman"
+                path="/hero/1009368"
                 render={() => <Hero id={1009368} name={"Ironman"}/>}
               />
               <Route
-                path="/heros/hero/doctorstrange"
+                path="/hero/1009282"
                 render={() => <Hero id={1009282} name={"Doctor Strange"}/>}
               />
               <Route
-                path="/heros/hero/hulk"
+                path="/hero/1009351"
                 render={() =><Hero id={1009351} name={"Hulk"}/>}
               />
               <Route
-                path="/heros/hero/spiderman"
+                path="/hero/1009610"
                 render={() => <Hero id={1009610} name={"Spiderman"}/>}
               />
               <Route
-                path="/heros/hero/thor"
+                path="/hero/1009664"
                 render={() => <Hero id={1009664} name={"Thor"}/>}
               />
               <Route
-                path="/heros/hero/thanos"
+                path="/hero/1009652"
                 render={() => <Hero id={1009652} name={"Thanos"}/>}
               />
               <Route
-                path="/heros/hero/captainamerica"
+                path="/hero/1009220"
                 render={() => <Hero id={1009220} name={"Kapitan Ameryka"}/>}
               />
               <Route
-                path="/heros/hero/blackwidow"
+                path="/hero/1009189"
                 render={() => <Hero id={1009189} name={"Czarna Wdowa"}/>}
               />
+
+
               <Route
-                path="/comics"
-                render={() => <Comics/>}
+                path="/hero/comics/1009268"
+                render={() => <Comics id={1009268}/>}
               />
+              <Route
+                path="/hero/comics/1009368"
+                render={() => <Comics id={1009368}/>}
+              />
+              <Route
+                path="/hero/comics/1009282"
+                render={() => <Comics id={1009282}/>}
+              />
+              <Route
+                path="/hero/comics/1009351"
+                render={() => <Comics id={1009351}/>}
+              />
+              <Route
+                path="/hero/comics/1009610"
+                render={() => <Comics id={1009610}/>}
+              />
+              <Route
+                path="/hero/comics/1009664"
+                render={() => <Comics id={1009664}/>}
+              />
+              <Route
+                path="/hero/comics/1009652"
+                render={() => <Comics id={1009652}/>}
+              />
+              <Route
+                path="/hero/comics/1009220"
+                render={() => <Comics id={1009220}/>}
+              />
+              <Route
+                path="/hero/comics/1009189"
+                render={() => <Comics id={1009189}/>}
+              />
+
+
+
+
+
+              {/*<Route*/}
+                {/*path="/comics"*/}
+                {/*render={() => <Comics/>}*/}
+              {/*/>*/}
               {/*<Route*/}
                 {/*path="/movies"*/}
                 {/*render={() => <Movies/>}*/}

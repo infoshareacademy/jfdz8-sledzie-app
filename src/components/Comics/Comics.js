@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import './Comics.css'
 import styled from 'styled-components'
-import {Link} from "react-router-dom";
 
 
 const Div = styled.div`
@@ -21,60 +20,27 @@ const Img = styled.img`
     }
 `
 
-const Button = styled.button`
-  text-transform: uppercase;
-  color: black;
-  font-size: 15px;
-  font-weight: lighter;
-  margin-left: 15px;
-  margin-bottom: 25px;
-  background: white;
- 
-    &:focus {
-     outline:0;
-    }
-  
-    &:hover {
-    font-weight: bolder
-    }
-`
-
 class Comics extends Component {
 
   state = {
-    comic: null
+    comics: null
   }
 
   componentDidMount () {
-    fetch(`https://gateway.marvel.com:443/v1/public/characters/1009268/comics?apikey=5b4ca4fb9704024334914e17aabbb5a3`)
+    fetch(`https://gateway.marvel.com:443/v1/public/characters/${this.props.id}/comics?apikey=5b4ca4fb9704024334914e17aabbb5a3`)
       .then(response => response.json())
-      .then(payload => this.setState({comic: payload.data.results[7]}))
+      .then(payload => this.setState({comics: payload.data.results[2]}))
   }
 
   render() {
-    // const title = this.state.comic && `${this.state.comic.title}`
-    // const description = this.state.comic && `${this.state.comic.description}`
+    // const title = this.state.comics && `${this.state.comics.title}`
+    // const description = this.state.comics && `${this.state.comics.description}`
 
-    const cover = this.state.comic && `${this.state.comic.thumbnail.path}.${this.state.comic.thumbnail.extension}`
+    const cover = this.state.comics && `${this.state.comics.thumbnail.path}.${this.state.comics.thumbnail.extension}`
 
     return (
-      <React.Fragment>
-        <div>
-          <Link to="/heros/hero/deadpool"><Button><span className="arrow left"/>Cofnij</Button></Link>
-        </div>
+      <Fragment>
         <Div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
-          <div><Img src={cover} alt=""/></div>
           <div><Img src={cover} alt=""/></div>
           <div><Img src={cover} alt=""/></div>
           <div><Img src={cover} alt=""/></div>
@@ -90,7 +56,7 @@ class Comics extends Component {
           {/*</div>*/}
         {/*</div>*/}
 
-      </React.Fragment>
+      </Fragment>
     )
   }
 }

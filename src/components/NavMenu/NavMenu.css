@@ -17,5 +17,11 @@
 }
 .nav-bar-item:hover {
     border-bottom: solid 1px #ff4918;
-
+}
+.hidden-div-test {
+    position: absolute;
+    z-index: 10;
+    height: 100px;
+    background: #fff;
+    width: 100%;
 }

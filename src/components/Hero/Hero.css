@@ -11,3 +11,15 @@
 .fab {
     font-size: 35px
 }
+
+
+span {
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 6px;
+    margin-left: 20px;
+    margin-top: 20px;
+
+}
+

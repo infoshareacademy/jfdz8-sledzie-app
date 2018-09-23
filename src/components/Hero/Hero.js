@@ -7,15 +7,19 @@ import {Link} from "react-router-dom";
 const Container = styled.div`
   width: 80%;
 `
-const DivOne = styled.div`
+const ImgDiv = styled.div`
   width: 40%;
   height: 600px;
   float: left
 `
-const DivTwo = styled.div`
+const TextDiv = styled.div`
   height: 525px;
-
 `
+
+// const HeaderDiv = styled.div`
+//
+// `
+
 const Img = styled.img`
   width: 80%;
   height: auto;
@@ -33,8 +37,9 @@ const P = styled.p`
   font-family: Montserrat, sans-serif;
   text-align: justify
 `
-const StyledLink = styled(Link)`
+const HeroBar = styled(Link)`
   text-decoration: none;
+  display: inline;
   color: black;
   padding-right: 15px;  
   padding-top: 15px;
@@ -56,7 +61,7 @@ const Ul = styled.div`
 const Button = styled.button`
   text-transform: uppercase;
   color: black;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: lighter;
   margin-left: 15px;
   background: white;
@@ -69,7 +74,7 @@ const Button = styled.button`
     font-weight: bolder
     }
 `
-const StyledLink2 = styled(Link) `
+const FeatureBar = styled(Link) `
   text-decoration: none;
   color: black;
   font-size: 20px;
@@ -85,6 +90,12 @@ const StyledLink2 = styled(Link) `
       color: #CC0000
     }  
 `
+
+const FeaturesDiv = styled.div`
+  display: flex;
+  justify-content: flex-end
+`
+
 class Hero extends Component {
 
   state = {
@@ -116,33 +127,33 @@ class Hero extends Component {
       <React.Fragment>
         <Link to="/heroes"><Button><span className="arrow left"/>Cofnij</Button></Link>
           <Ul>
-            <StyledLink to="/heros/hero/deadpool">Deadpool</StyledLink>
-            <StyledLink to="/heros/hero/ironman">Iron Man</StyledLink>
-            <StyledLink to="/heros/hero/doctorstrange">Doctor Strange</StyledLink>
-            <StyledLink to="/heros/hero/hulk">Hulk</StyledLink>
-            <StyledLink to="/heros/hero/spiderman">Spider-Man</StyledLink>
-            <StyledLink to="/heros/hero/thor">Thor</StyledLink>
-            <StyledLink to="/heros/hero/thanos">Thanos</StyledLink>
-            <StyledLink to="/heros/hero/captainamerica">Kapitan Ameryka</StyledLink>
-            <StyledLink to="/heros/hero/blackwidow">Czarna Wdowa</StyledLink>
+            <HeroBar to="/hero/1009268">Deadpool</HeroBar>
+            <HeroBar to="/hero/1009368">Iron Man</HeroBar>
+            <HeroBar to="/hero/1009282">Doctor Strange</HeroBar>
+            <HeroBar to="/hero/1009351">Hulk</HeroBar>
+            <HeroBar to="/hero/1009610">Spider-Man</HeroBar>
+            <HeroBar to="/hero/1009664">Thor</HeroBar>
+            <HeroBar to="/hero/1009652">Thanos</HeroBar>
+            <HeroBar to="/hero/1009220">Kapitan Ameryka</HeroBar>
+            <HeroBar to="/hero/1009189">Czarna Wdowa</HeroBar>
           </Ul>
         <Container>
-          <DivOne>
+          <ImgDiv>
             <Img className="hero-pic" src={path} alt="The hero"/>
-          </DivOne>
-          <DivTwo>
-            <H1 className="hero-name">
-              {name}
-              <button className="fav-btn">
-                  <StyledLink2 to="/movies" >Filmy</StyledLink2>
-                  <StyledLink2 to="/comics" >Komiksy</StyledLink2>
-                <i className="fab fa-gratipay" title="Dodaj do ulubionych"/>
-              </button>
-            </H1>
-            <P className="hero-desc">{ (this.state.details && this.state.details.description) || 'Work in progess' }</P>
-          </DivTwo>
+          </ImgDiv>
+          <TextDiv>
+              <H1 className="hero-name">{name}</H1>
+              <FeaturesDiv>
+                <FeatureBar to="/movies" >Filmy</FeatureBar>
+                <FeatureBar to={`/hero/comics/${this.props.id}`}>Komiksy</FeatureBar>
+                <button className="fav-btn">
+                  <i className="fab fa-gratipay" title="Dodaj do ulubionych"/>
+                </button>
+              </FeaturesDiv>
+            <P className="hero-desc">{ (this.state.details && this.state.details.description) || 'Work in progress' }</P>
+          </TextDiv>
         </Container>
-        </React.Fragment>
+      </React.Fragment>
     )
   }
 }

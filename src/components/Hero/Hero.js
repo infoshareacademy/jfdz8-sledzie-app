@@ -16,9 +16,9 @@ const TextDiv = styled.div`
   height: 525px;
 `
 
-const HeaderDiv = styled.div`
-
-`
+// const HeaderDiv = styled.div`
+//
+// `
 
 const Img = styled.img`
   width: 80%;
@@ -142,7 +142,6 @@ class Hero extends Component {
             <Img className="hero-pic" src={path} alt="The hero"/>
           </ImgDiv>
           <TextDiv>
-            <HeaderDiv>
               <H1 className="hero-name">{name}</H1>
               <FeaturesDiv>
                 <FeatureBar to="/movies" >Filmy</FeatureBar>
@@ -151,7 +150,6 @@ class Hero extends Component {
                   <i className="fab fa-gratipay" title="Dodaj do ulubionych"/>
                 </button>
               </FeaturesDiv>
-            </HeaderDiv>
             <P className="hero-desc">{ (this.state.details && this.state.details.description) || 'Work in progress' }</P>
           </TextDiv>
         </Container>

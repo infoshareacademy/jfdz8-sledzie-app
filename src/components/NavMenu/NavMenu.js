@@ -13,25 +13,32 @@ class NavMenu extends Component {
     const options = [
       null,
       {
-        render: () => <p>Hello</p>,
-        label: 'Hello',
-        href: '/foo'
+        render: () => <div className='hidden-div-test'>Sekcja super mocy</div>,
+        label: 'superbohaterowie',
+        href: '/heroes',
+        iconSrc : ''
       },
       {
-        render: () => <p>Blah</p>,
-        label: 'Blah',
-        href: '/bizz'
+        render: () => <div className='hidden-div-test'>Komiksy czytamy</div>,
+        label: 'komiksy',
+        href: '/komiksy',
+        iconSrc : ''
+      },
+      {
+        render: () => <div className='hidden-div-test'>Filmy oglądamy</div>,
+        label: 'filmy',
+        href: '/filmy',
+        iconSrc : ''
       }
     ]
     return (
       <div onMouseLeave={() => this.setState({show: 0})}>
         <div className='nav'>
           <ul className='nav-bar'>
-            <li onMouseOver={() => this.setState({show: 1})} className='nav-bar-item'><Link to='/heroes'>SUPERBOHATEROWIE</Link></li>
             {
               options.map(
                 (option, index) => option && (
-                  <li onMouseOver={() => this.setState({show: index})} className='nav-bar-item'><Link to={option.href}>{option.label}</Link></li>
+                  <li onMouseOver={() => this.setState({show: index})} className='nav-bar-item'><Link to={option.href}><img src={option.iconSrc}/>{option.label}</Link></li>
                 )
               )
             }

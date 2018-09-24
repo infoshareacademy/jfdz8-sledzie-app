@@ -7,6 +7,7 @@ import NavMenu from '../NavMenu/NavMenu';
 import Characters from "../Characters/Characters";
 import Hero from '../Hero/Hero'
 import Comics from '../Comics/Comics'
+import ComicsMenu from '../ComicsMenu/ComicsMenu'
 
 class App extends Component {
 
@@ -23,6 +24,10 @@ class App extends Component {
               <Route
                 path="/heroes"
                 render={() => <Characters />}
+              />
+              <Route
+                path="/komiksy"
+                render={() => <ComicsMenu />}
               />
               <Route
                 path="/hero/1009268"

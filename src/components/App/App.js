@@ -8,6 +8,7 @@ import Characters from "../Characters/Characters";
 import Hero from '../Hero/Hero'
 import Comics from '../Comics/Comics'
 import ComicsMenu from '../ComicsMenu/ComicsMenu'
+import MoviesMenu from '../MovieMenu/MovieMenu'
 
 class App extends Component {
 
@@ -29,6 +30,11 @@ class App extends Component {
                 path="/komiksy"
                 render={() => <ComicsMenu />}
               />
+                <Route
+                    path="/filmy"
+                    render={() => <MoviesMenu />}
+                />
+
               <Route
                 path="/hero/1009268"
                 render={() => <Hero id={1009268} name={"Deadpool"}/>}

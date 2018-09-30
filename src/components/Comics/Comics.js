@@ -2,14 +2,11 @@ import React, { Component, Fragment } from 'react'
 import './Comics.css'
 import styled from 'styled-components'
 
-
 const Div = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap
 `
-
-
 const Img = styled.img`
   margin: 15px;
   box-shadow: 10px 10px 5px #D3D3D3;
@@ -39,31 +36,24 @@ class Comics extends Component {
   }
 
   render() {
-    // const title = this.state.comicBooks && `${this.state.comicBooks.title}`
-    // const description = this.state.comicBooks && `${this.state.comicBooks.description}`
+  const urlToDelete = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
 
     return (
       <Fragment>
         <Div>
           {
-            this.state.comicBooks.map(
+            this.state.comicBooks.filter(
+              comicBook => makeCoverUrl(comicBook) !== urlToDelete
+            ).map(
               comicBook => (
-                <div><Img src={makeCoverUrl(comicBook)} alt=""/></div>
+                <div>
+                  <Img src={makeCoverUrl(comicBook)} alt=""/>
+                </div>
               )
             )
           }
         </Div>
-
-
-        {/*<div>*/}
-          {/*<div>*/}
-            {/*<h1>{title}</h1>*/}
-          {/*<div>*/}
-            {/*<p>{description}</p>*/}
-          {/*</div>*/}
-        {/*</div>*/}
-
-      </Fragment>
+       </Fragment>
     )
   }
 }

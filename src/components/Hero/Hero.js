@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import './Hero.css'
 import styled from 'styled-components'
 import { database } from '../../firebase';
@@ -124,7 +124,7 @@ class Hero extends Component {
     const path = this.state.hero && `${this.state.hero.thumbnail.path}.${this.state.hero.thumbnail.extension}`
     const name = this.props.name
     return (
-      <React.Fragment>
+      <Fragment>
         <Link to="/heroes"><Button><span className="arrow left"/>Cofnij</Button></Link>
           <Ul>
             <HeroBar to="/hero/1009268">Deadpool</HeroBar>
@@ -144,7 +144,7 @@ class Hero extends Component {
           <TextDiv>
               <H1 className="hero-name">{name}</H1>
               <FeaturesDiv>
-                <FeatureBar to="/movies" >Filmy</FeatureBar>
+                <FeatureBar to={`/hero/movies/${this.props.id}`} >Filmy</FeatureBar>
                 <FeatureBar to={`/hero/comics/${this.props.id}`}>Komiksy</FeatureBar>
                 <button className="fav-btn">
                   <i className="fab fa-gratipay" title="Dodaj do ulubionych"/>
@@ -153,7 +153,7 @@ class Hero extends Component {
             <P className="hero-desc">{ (this.state.details && this.state.details.description) || 'Work in progress' }</P>
           </TextDiv>
         </Container>
-      </React.Fragment>
+      </Fragment>
     )
   }
 }

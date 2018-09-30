@@ -8,6 +8,7 @@ import Characters from "../Characters/Characters";
 import Hero from '../Hero/Hero'
 import Comics from '../Comics/Comics'
 import ComicsMenu from '../ComicsMenu/ComicsMenu'
+import Movies from "../Movies/Movies";
 
 class App extends Component {
 
@@ -102,6 +103,45 @@ class App extends Component {
               <Route
                 path="/hero/comics/1009189"
                 render={() => <Comics id={1009189}/>}
+              />
+
+
+
+              <Route
+                path="/hero/movies/1009268"
+                render={() => <Movies id={1009268}/>}
+              />
+              <Route
+                path="/hero/movies/1009368"
+                render={() => <Movies id={1009368}/>}
+              />
+              <Route
+                path="/hero/movies/1009282"
+                render={() => <Movies id={1009282}/>}
+              />
+              <Route
+                path="/hero/movies/1009351"
+                render={() => <Movies id={1009351}/>}
+              />
+              <Route
+                path="/hero/movies/1009610"
+                render={() => <Movies id={1009610}/>}
+              />
+              <Route
+                path="/hero/movies/1009664"
+                render={() => <Movies id={1009664}/>}
+              />
+              <Route
+                path="/hero/movies/1009652"
+                render={() => <Movies id={1009652}/>}
+              />
+              <Route
+                path="/hero/movies/1009220"
+                render={() => <Movies id={1009220}/>}
+              />
+              <Route
+                path="/hero/movies/1009189"
+                render={() => <Movies id={1009189}/>}
               />
 
 

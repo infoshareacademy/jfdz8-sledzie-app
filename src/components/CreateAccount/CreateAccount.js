@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './CreateAccount.css';
+import logo from './login-image.png';
 import {auth} from '../../firebase';
 import {withRouter, Link} from 'react-router-dom'
 
@@ -40,31 +41,33 @@ class CreateAccount extends Component {
               <button onClick={this.signOut}>Sign ou</button>
             </div>
             :
-            <div>
+            <div className="create-account-container-input-box">
               <form onSubmit={this.handleSubmit}>
-                <input
-                  type="text"
-                  placeholder="email"
-                  value={this.state.email}
-                  onChange={event => this.setState({
-                    email: event.target.value
-                  })}
+                <h1 className="create-account-header">Rejestracja</h1>
+                <input className="create-account-container-input"
+                       type="text"
+                       placeholder="email"
+                       value={this.state.email}
+                       onChange={event => this.setState({
+                         email: event.target.value
+                       })}
                 />
-                <input
-                  type="password"
-                  placeholder="password"
-                  value={this.state.password}
-                  onChange={event => this.setState({
-                    password: event.target.value
-                  })}
+                <input className="create-account-container-input"
+                       type="password"
+                       placeholder="password"
+                       value={this.state.password}
+                       onChange={event => this.setState({
+                         password: event.target.value
+                       })}
                 />
-                <button>Sign up</button>
+                <button className="sign-up-button">Sign up</button>
               </form>
             </div>
           }
-
-
-          <button onClick={() => this.props.history.push('/')}>Powrót</button>
+          <div className="logo-create-account-container">
+            <img className="logo-create-account" src={logo} alt=""/>
+          </div>
+          <button className="back-button" onClick={() => this.props.history.push('/')}>Powrót</button>
         </div>
       </div>
 

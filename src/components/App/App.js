@@ -1,12 +1,14 @@
-import React, { Component, Fragment } from 'react'
+import React, {Component, Fragment} from 'react'
 import './App.css'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
 
 import LoginBar from '../LoginBar/LoginBar'
 import NavMenu from '../NavMenu/NavMenu';
 import Characters from "../Characters/Characters";
 import Hero from '../Hero/Hero'
 import Comics from '../Comics/Comics'
+import LogIn from "../LogIn/LogIn";
+import CreateAccount from "../CreateAccount/CreateAccount";
 
 class App extends Component {
 
@@ -16,13 +18,13 @@ class App extends Component {
         <Fragment>
           <Router>
             <Fragment>
-              <LoginBar />
-              <NavMenu />
+              <LoginBar/>
+              <NavMenu/>
 
               <Route exact path="/"/>
               <Route
                 path="/heroes"
-                render={() => <Characters />}
+                render={() => <Characters/>}
               />
               <Route
                 path="/hero/1009268"
@@ -38,7 +40,7 @@ class App extends Component {
               />
               <Route
                 path="/hero/1009351"
-                render={() =><Hero id={1009351} name={"Hulk"}/>}
+                render={() => <Hero id={1009351} name={"Hulk"}/>}
               />
               <Route
                 path="/hero/1009610"
@@ -100,16 +102,25 @@ class App extends Component {
               />
 
 
+              <Route
+                path="/LogIn"
+                render={() => <LogIn />}
+              />
 
+              <Route exact path="/"/>
+              <Route
+                path="/CreateAccount"
+                render={() => <CreateAccount />}
+              />
 
 
               {/*<Route*/}
-                {/*path="/comics"*/}
-                {/*render={() => <Comics/>}*/}
+              {/*path="/comics"*/}
+              {/*render={() => <Comics/>}*/}
               {/*/>*/}
               {/*<Route*/}
-                {/*path="/movies"*/}
-                {/*render={() => <Movies/>}*/}
+              {/*path="/movies"*/}
+              {/*render={() => <Movies/>}*/}
               {/*/>*/}
             </Fragment>
           </Router>

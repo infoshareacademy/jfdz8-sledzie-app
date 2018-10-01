@@ -11,5 +11,6 @@ const config = {
 const fb = firebase.initializeApp(config);
 
 export const database = fb.database();
+export const auth = firebase.auth
 
 

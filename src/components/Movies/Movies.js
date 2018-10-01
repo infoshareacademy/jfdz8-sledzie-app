@@ -27,6 +27,10 @@ class Movies extends Component {
                 this.state.details && this.state.details.movies.map(
                   movie => (
                     <Fragment>
+                      <div>{movie.title}{" "}{movie.year}</div>
+                      <br/>
+                      <div>Reżyseria: {movie.directedBy}</div>
+                      <br/>
                       <div>{movie.description}</div>
                       <iframe src={`https://www.youtube.com/embed/${movie.url}`} />
                     </Fragment>

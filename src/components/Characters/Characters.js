@@ -64,6 +64,7 @@ const Button = styled.button`
   margin-top: 20px;
   background: white;
  
+ 
     &:focus {
      outline:0;
     }
@@ -93,7 +94,7 @@ class Characters extends Component {
           <Img src={background} alt=""/>
           <H1>Superbohaterowie</H1>
         </Header>
-        <Link to="/"><Button><span className="arrow left"/>Powrót</Button></Link>
+        <Link to="/"><Button><span className="arrow left"/>Do głównej</Button></Link>
         <Div>
           <Link to="/hero/1009268"><img src={this.state.imgDeadpool}
                                         alt=""

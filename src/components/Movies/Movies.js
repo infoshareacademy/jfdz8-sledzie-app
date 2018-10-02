@@ -2,7 +2,8 @@ import React, { Component, Fragment } from 'react'
 import {database} from "../../firebase";
 import './Movies.css'
 import styled from 'styled-components'
-import image from './filmweb_icon.jpg'
+import filmwebImg from './filmweb_icon.jpg'
+import imdbImg from './imdb.jpg'
 
 const Container = styled.div`
   width: 90%;
@@ -14,16 +15,17 @@ const Video = styled.div`
   width: 50%;
 `
 const Feature = styled.div`
+  padding-top: 50px;
   overflow: auto;
-  height: 400px;
+  height: 390px;
   margin-top: 80px;
   box-shadow: 10px 10px 5px #D3D3D3;
 `
 
-const Title = styled.div`
-  margin-top: 40px;
+const Title = styled.p`
   font-weight: bold;
   font-size: 25px;
+  display: inline
 `
 
 const Director = styled.div`
@@ -38,10 +40,18 @@ const Description = styled.div`
   text-align: justify; 
   font-family: Montserrat, sans-serif; 
 `
-const Img = styled.img`
-  padding-top: 20px;
-  width: 12%;
-  height: auto;
+
+const FilmwebImg = styled.img`
+  width: auto;
+  height: 8%;
+  float: right;
+`
+
+const ImdbImg = styled.img`
+  width: auto;
+  height: 8%;
+  float: right;
+  padding-right: 40px
 `
 
 class Movies extends Component {
@@ -75,10 +85,17 @@ class Movies extends Component {
                           <iframe width="700" height="390"  allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
                         </Video>
                         <Feature>
-                          <Title>{movie.title}{" "}{movie.year}</Title><br/>
+                          <Title>{movie.title}{" "}{movie.year}</Title>
+                          <a href={movie.imdb} target="_blank">
+                            <ImdbImg src={imdbImg} alt="imdb.com"/>
+                          </a>
+                          <a href={movie.filmweb} target="_blank">
+                            <FilmwebImg src={filmwebImg} alt="filmweb.pl"/>
+                          </a>
+                          <br/>
+                          <br/>
                           <Director>Reżyseria: {movie.directedBy}</Director><br/>
                           <Description>{movie.description}</Description>
-                          <a href={movie.filmweb} target="_blank"><Img src={image} alt="filmweb.pl"/></a>
                         </Feature>
                       </Container>
                     </Fragment>

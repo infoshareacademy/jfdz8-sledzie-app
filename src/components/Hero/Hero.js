@@ -16,10 +16,6 @@ const TextDiv = styled.div`
   height: 525px;
 `
 
-// const HeaderDiv = styled.div`
-//
-// `
-
 const Img = styled.img`
   width: 80%;
   height: auto;

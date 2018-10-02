@@ -29,13 +29,10 @@ class App extends Component {
     return (
       <div className="App">
         <Fragment>
-
           <Router>
             <Fragment>
-
               <LoginBar />
               <NavMenu />
-
               <Route exact path="/"/>
               <Route
                 path="/heroes"
@@ -45,7 +42,6 @@ class App extends Component {
                 path="/komiksy"
                 render={() => <ComicsMenu />}
               />
-
 
             {heroes.map((hero => (
                 <Fragment>
@@ -63,7 +59,6 @@ class App extends Component {
                   />
                 </Fragment>
               )))}
-
 
             </Fragment>
           </Router>

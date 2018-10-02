@@ -1,7 +1,6 @@
 import React, {Component, Fragment} from 'react'
 import './App.css'
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-
 import LoginBar from '../LoginBar/LoginBar'
 import NavMenu from '../NavMenu/NavMenu';
 import Characters from "../Characters/Characters";
@@ -39,6 +38,14 @@ class App extends Component {
 
               <Route exact path="/"/>
               <Route
+                path="/LogIn"
+                render={() => <LogIn />}
+              />
+              <Route
+                path="/CreateAccount"
+                render={() => <CreateAccount />}
+              />
+              <Route
                 path="/heroes"
                 render={() => <Characters/>}
               />
@@ -63,19 +70,6 @@ class App extends Component {
                   />
                 </Fragment>
               )))}
-
-
-              <Route
-                path="/LogIn"
-                render={() => <LogIn />}
-              />
-
-              <Route exact path="/"/>
-              <Route
-                path="/CreateAccount"
-                render={() => <CreateAccount />}
-              />
-
             </Fragment>
           </Router>
         </Fragment>

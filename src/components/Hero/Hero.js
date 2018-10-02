@@ -5,7 +5,7 @@ import { database } from '../../firebase';
 import {Link} from "react-router-dom";
 
 const Container = styled.div`
-  width: 80%;
+  width: 90%;
 `
 const ImgDiv = styled.div`
   width: 40%;

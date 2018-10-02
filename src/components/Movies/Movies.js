@@ -45,13 +45,21 @@ const FilmwebImg = styled.img`
   width: auto;
   height: 8%;
   float: right;
+  
+  &:hover {
+    opacity: 0.5 
+  }
 `
 
 const ImdbImg = styled.img`
   width: auto;
   height: 8%;
   float: right;
-  padding-right: 40px
+  padding-right: 40px;
+  
+   &:hover {
+    opacity: 0.5 
+  }
 `
 
 class Movies extends Component {

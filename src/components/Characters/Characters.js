@@ -55,24 +55,24 @@ const Div = styled.div`
   align-items:center;
   justify-content: space-around;  
 `
-const Button = styled.button`
-  text-transform: uppercase;
-  color: black;
-  font-size: 15px;
-  font-weight: lighter;
-  margin-left: 15px;
-  margin-top: 20px;
-  background: white;
- 
- 
-    &:focus {
-     outline:0;
-    }
-  
-    &:hover {
-    font-weight: bolder
-    }
-`
+// const Button = styled.button`
+//   text-transform: uppercase;
+//   color: black;
+//   font-size: 15px;
+//   font-weight: lighter;
+//   margin-left: 15px;
+//   margin-top: 20px;
+//   background: white;
+//
+//
+//     &:focus {
+//      outline:0;
+//     }
+//
+//     &:hover {
+//     font-weight: bolder
+//     }
+// `
 class Characters extends Component {
 
   state = {
@@ -94,7 +94,7 @@ class Characters extends Component {
           <Img src={background} alt=""/>
           <H1>Superbohaterowie</H1>
         </Header>
-        <Link to="/"><Button><span className="arrow left"/>Do głównej</Button></Link>
+        {/*<Link to="/"><Button><span className="arrow left"/>Do głównej</Button></Link>*/}
         <Div>
           <Link to="/hero/1009268"><img src={this.state.imgDeadpool}
                                         alt=""

@@ -38,7 +38,7 @@ class NavMenu extends Component {
             {
               options.map(
                 (option, index) => option && (
-                  <li onMouseOver={() => this.setState({show: index})} className='nav-bar-item'><Link to={option.href}><img src={option.iconSrc}/>{option.label}</Link></li>
+                  <li key={index} onMouseOver={() => this.setState({show: index})} className='nav-bar-item'><Link to={option.href}><img src={option.iconSrc}/>{option.label}</Link></li>
                 )
               )
             }

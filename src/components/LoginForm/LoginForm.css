@@ -4,7 +4,7 @@
     width: 400px;
     height: 360px;
     background: #000;
-    z-index: 10;
+    z-index: 20;
 }
 .logo-form-container {
     margin: auto;
@@ -18,7 +18,10 @@
     height: auto;
 }
 .btn-form-sign-in, .btn-form-create-account {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
     margin: auto;
     margin-top: 15px;
     width: 300px;
@@ -26,6 +29,12 @@
     text-transform: uppercase;
     font-family: Arial,sans-serif;
     cursor: pointer;
+    text-decoration: none;
+    font-size: 12px;
+}
+.btn-form-sign-in {
+    background: #fff;
+    color: #000;
 }
 .btn-form-create-account {
     background: #000;

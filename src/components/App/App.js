@@ -1,11 +1,14 @@
-import React, { Component, Fragment } from 'react'
+import React, {Component, Fragment} from 'react'
 import './App.css'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+
 import LoginBar from '../LoginBar/LoginBar'
 import NavMenu from '../NavMenu/NavMenu';
 import Characters from "../Characters/Characters";
 import Hero from '../Hero/Hero'
 import Comics from '../Comics/Comics'
+import LogIn from "../LogIn/LogIn";
+import CreateAccount from "../CreateAccount/CreateAccount";
 import ComicsMenu from '../ComicsMenu/ComicsMenu'
 import Movies from "../Movies/Movies";
 
@@ -31,16 +34,17 @@ class App extends Component {
         <Fragment>
           <Router>
             <Fragment>
-              <LoginBar />
-              <NavMenu />
+              <LoginBar/>
+              <NavMenu/>
+
               <Route exact path="/"/>
               <Route
                 path="/heroes"
-                render={() => <Characters />}
+                render={() => <Characters/>}
               />
               <Route
                 path="/komiksy"
-                render={() => <ComicsMenu />}
+                render={() => <ComicsMenu/>}
               />
 
             {heroes.map((hero => (
@@ -59,6 +63,18 @@ class App extends Component {
                   />
                 </Fragment>
               )))}
+
+
+              <Route
+                path="/LogIn"
+                render={() => <LogIn />}
+              />
+
+              <Route exact path="/"/>
+              <Route
+                path="/CreateAccount"
+                render={() => <CreateAccount />}
+              />
 
             </Fragment>
           </Router>

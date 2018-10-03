@@ -47,7 +47,8 @@ const H1 = styled.h1`
   text-align: center;
   color: #F8F8FF;
   font-weight: bolder;
-  font-size: 50px
+  font-size: 50px;
+  font-family: Marvel, sans-serif;
 `
 const Div = styled.div`
   display: flex;
@@ -76,8 +77,6 @@ const HeroImg = styled.img`
     max-height: 100%;
   }
 `
-
-
 // const Button = styled.button`
 //   text-transform: uppercase;
 //   color: black;

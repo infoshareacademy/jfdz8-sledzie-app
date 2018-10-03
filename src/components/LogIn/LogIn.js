@@ -49,7 +49,7 @@ class LogIn extends Component {
           {this.state.user ?
             <div>
               <p>Hello {this.state.user.email}</p>
-              <button onClick={this.signOut}>Sign out</button>
+              <button onClick={this.signOut}>Wyloguj się</button>
             </div>
             :
             <div className="log-in-container-input-box">

@@ -22,7 +22,7 @@ class CreateAccount extends Component {
 
   signOut() {
     auth().signOut()
-  .then(() => this.setState({...initialState}))
+      .then(() => this.setState({...initialState}))
       .catch(() => window.alert('Sign out failed!'));
   }
 
@@ -50,7 +50,7 @@ class CreateAccount extends Component {
           {this.state.user ?
             <div>
               <p>Hello {this.state.user.email}</p>
-              <button onClick={this.signOut}>Sign ou</button>
+              <button onClick={this.signOut}>Wyloguj się</button>
             </div>
             :
             <div className="create-account-container-input-box">

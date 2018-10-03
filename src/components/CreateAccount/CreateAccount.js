@@ -20,10 +20,10 @@ class CreateAccount extends Component {
     )
   }
 
-  signOut() {
+  signOut = () => {
     auth().signOut()
       .then(() => this.setState({...initialState}))
-      .catch(() => window.alert('Zostałeś poprawnie wylogowany!'));
+      .catch(() => window.alert('Wylogowanie nie powiodło się!'));
   }
 
   handleSubmit = event => {

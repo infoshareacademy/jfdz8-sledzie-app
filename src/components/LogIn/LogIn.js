@@ -20,10 +20,10 @@ class LogIn extends Component {
     )
   }
 
-  signOut() {
+  signOut= () => {
     auth().signOut()
       .then(() => this.setState({...initialState}))
-      .catch(() => window.alert('Zostałeś poprawnie wylogowany!'));
+      .catch(() => window.alert('Wylogowanie nie powiodło się!'));
   }
 
   logIn = event => {

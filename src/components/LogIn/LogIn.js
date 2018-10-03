@@ -4,22 +4,26 @@ import logo from './login-image.png';
 import {auth} from '../../firebase'
 import {withRouter, Link} from 'react-router-dom'
 
+const initialState = {
+  email: '',
+  password: '',
+  user: null
+}
+
 class LogIn extends Component {
 
-  state = {
-    email: '',
-    password: '',
-    user: null
-  }
+  state = {...initialState};
 
   componentDidMount() {
     auth().onAuthStateChanged(
-      user => this.setState({user})
+      user => this.setState({user: user || null})
     )
   }
 
   signOut() {
-    auth().signOut();
+    auth().signOut()
+      .then(() => this.setState({...initialState}))
+      .catch(() => window.alert('Sign out failed!'));
   }
 
   logIn = event => {
@@ -27,7 +31,7 @@ class LogIn extends Component {
     auth().signInWithEmailAndPassword(
       this.state.email,
       this.state.password
-    )
+    ).catch(() => window.alert('Logowanie nie powiodło się, wprowadź poprawne dane lub stwórz konto w serwisie.'));
   }
 
   render() {

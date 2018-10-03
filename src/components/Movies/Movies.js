@@ -90,7 +90,7 @@ class Movies extends Component {
                     <Fragment>
                       <Container>
                         <Video>
-                          <iframe width="700" height="390"  allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
+                          <iframe width="700" height="390" title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
                         </Video>
                         <Feature>
                           <Title>{movie.title}{" "}{movie.year}</Title>

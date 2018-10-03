@@ -32,6 +32,7 @@ const Img = styled.img`
   margin-top: 50px;
 `
 const H1 = styled.h1`
+  font-family: Marvel, sans-serif;
   margin-top: 15px;
   text-align: center
   
@@ -57,6 +58,7 @@ const P = styled.p`
     }
 `
 const HeroBar = styled(Link)`
+  font-family: Marvel, sans-serif;
   text-decoration: none;
   display: inline;
   color: black;
@@ -74,13 +76,21 @@ const HeroBar = styled(Link)`
     }
 `
 const Ul = styled.div`
-  text-align: center;
-  font-weight: bolder;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 20px;
+
+
+  @media (min-width: 992px) {
+    text-align: center;
+    font-weight: bolder;
+  }
 `
 const Button = styled.button`
   text-transform: uppercase;
+  font-style: italic;
   color: black;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: lighter;
   margin-left: 15px;
   background: white;
@@ -94,6 +104,7 @@ const Button = styled.button`
     }
 `
 const FeatureBar = styled(Link) `
+  font-family: Marvel, sans-serif;
   text-decoration: none;
   color: black;
   font-size: 20px;
@@ -147,7 +158,7 @@ class Hero extends Component {
     const name = this.props.name
     return (
       <Fragment>
-        <Link to="/heroes"><Button><span className="arrow left"/>Cofnij</Button></Link>
+        <Link to="/heroes"><Button><span className="arrow left"/>Wróć do: bohaterowie</Button></Link>
           <Ul>
             <HeroBar to="/hero/1009268">Deadpool</HeroBar>
             <HeroBar to="/hero/1009368">Iron Man</HeroBar>

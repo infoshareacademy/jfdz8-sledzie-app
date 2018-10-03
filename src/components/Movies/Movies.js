@@ -23,6 +23,7 @@ const Feature = styled.div`
 `
 
 const Title = styled.p`
+  font-family: Marvel, sans-serif;
   font-weight: bold;
   font-size: 25px;
   display: inline

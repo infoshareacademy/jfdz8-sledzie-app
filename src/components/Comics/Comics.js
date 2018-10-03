@@ -4,8 +4,8 @@ import styled from 'styled-components'
 
 const Div = styled.div`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-wrap: wrap
 `
 const Img = styled.img`
   margin: 15px;

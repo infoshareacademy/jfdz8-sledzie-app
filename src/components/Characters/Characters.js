@@ -51,18 +51,16 @@ const H1 = styled.h1`
 `
 const Div = styled.div`
   display: flex;
-  justify-content: space-around
-  flex-wrap: wrap
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 10px
      
   @media (min-width: 992px) {
-    display:flex;
     align-items:center;
-    justify-content: space-around;  
     flex-wrap: nowrap;
     margin-top: 20px;
     margin-bottom: 20px
    }
- 
 `
 const HeroImg = styled.img`
     height: auto; 

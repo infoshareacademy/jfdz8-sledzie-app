@@ -71,7 +71,7 @@ class LogIn extends Component {
                          password: event.target.value
                        })}
                 />
-                <button className="log-in-button">Log in</button>
+                <button className="log-in-button">Zaloguj się</button>
               </form>
             </div>
           }

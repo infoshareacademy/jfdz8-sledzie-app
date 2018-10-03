@@ -4,13 +4,15 @@ import logo from './login-image.png';
 import {auth} from '../../firebase';
 import {withRouter, Link} from 'react-router-dom'
 
+const initialState = {
+  email: '',
+  password: '',
+  user: null
+}
+
 class CreateAccount extends Component {
 
-  state = {
-    email: '',
-    password: '',
-    user: null
-  }
+  state = {...initialState};
 
   componentDidMount() {
     auth().onAuthStateChanged(
@@ -19,7 +21,9 @@ class CreateAccount extends Component {
   }
 
   signOut() {
-    auth().signOut();
+    auth().signOut()
+  .then(() => this.setState({...initialState}))
+      .catch(() => window.alert('Sign out failed!'));
   }
 
   handleSubmit = event => {
@@ -27,13 +31,21 @@ class CreateAccount extends Component {
     auth().createUserWithEmailAndPassword(
       this.state.email,
       this.state.password
-    )
+    ).catch(() => this.setState({alertOccured: true}));
   }
 
 
   render() {
     return (
       <div className="create-account-container">
+        {this.state.alertOccured && <div className="punishment">
+          <p className="punishment-message">Rejestracja nie powiodła się, wprowadź poprawne dane aby stworzyć konto w
+            serwisie.</p>
+          <p className="punishment-message">Za bycie zbyt ciekawskim dostajesz nagrodę!!!</p>
+          <img src="http://49.media.tumblr.com/37d1f69d0253dafece9110afe8c9d1e2/tumblr_o5ca99VVCC1rey868o1_500.gif"
+               className="punishment-logo" alt=""/>
+          <button className="punishment-back-button" onClick={() => this.props.history.push('/')}>Powrót</button>
+        </div>}
         <div className="create-account-container-form">
           {this.state.user ?
             <div>
@@ -60,7 +72,7 @@ class CreateAccount extends Component {
                          password: event.target.value
                        })}
                 />
-                <button className="sign-up-button">Sign up</button>
+                <button className="sign-up-button">Zapisz się</button>
               </form>
             </div>
           }

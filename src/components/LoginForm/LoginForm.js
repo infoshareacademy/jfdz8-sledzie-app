@@ -11,7 +11,7 @@ class LoginForm extends Component {
           <div className="logo-form-container">
             <img className="login-form-logo" src={logo} alt=""/>
           </div>
-          <Link to="/LogIn" onClick={this.props.closeBar} className="btn-form-sign-in">Zapisz się</Link>
+          <Link to="/LogIn" onClick={this.props.closeBar} className="btn-form-sign-in">Logowanie</Link>
           <Link to="/CreateAccount" onClick={this.props.closeBar} className="btn-form-create-account">Stwórz
             konto</Link>
         </div>

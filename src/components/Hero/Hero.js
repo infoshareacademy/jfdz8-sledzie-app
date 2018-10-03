@@ -4,15 +4,24 @@ import styled from 'styled-components'
 import { database } from '../../firebase';
 import {Link} from "react-router-dom";
 
+
 const Container = styled.div`
   width: 90%;
 `
 const ImgDiv = styled.div`
-  width: 40%;
-  height: 600px;
-  float: left
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  
+  @media (min-width: 992px) {
+    width: 40%;
+    height: 600px;
+    float: left
+  }
 `
 const TextDiv = styled.div`
+  position: relative;
   height: 525px;
 `
 
@@ -23,15 +32,29 @@ const Img = styled.img`
   margin-top: 50px;
 `
 const H1 = styled.h1`
-  margin-left: -250px;
-  margin-top: 65px;
+  margin-top: 15px;
+  text-align: center
+  
+  @media (min-width: 992px) {
+    text-align: initial;
+    margin-left: -250px;
+    margin-top: 65px;
+  }
 `
 const P = styled.p`
-  margin-left: -250px;
-  margin-top: 15px;
-  font-size: 19px;
-  font-family: Montserrat, sans-serif;
-  text-align: justify
+    margin-left: 50px;
+    padding-bottom: 40px;
+    font-size: 19px;
+    font-family: Montserrat, sans-serif;
+    text-align: justify
+    
+  @media (min-width: 992px) {
+    margin-left: -250px;
+    margin-top: 15px;
+    font-size: 19px;
+    font-family: Montserrat, sans-serif;
+    text-align: justify
+    }
 `
 const HeroBar = styled(Link)`
   text-decoration: none;
@@ -76,11 +99,14 @@ const FeatureBar = styled(Link) `
   font-size: 20px;
   padding: 15px;
   font-weight: bolder;
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
+  
+  @media (min-width: 992px) {
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    }
   
     &:hover {
       color: #CC0000

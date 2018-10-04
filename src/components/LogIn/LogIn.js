@@ -20,10 +20,10 @@ class LogIn extends Component {
     )
   }
 
-  signOut() {
+  signOut= () => {
     auth().signOut()
       .then(() => this.setState({...initialState}))
-      .catch(() => window.alert('Sign out failed!'));
+      .catch(() => window.alert('Wylogowanie nie powiodło się!'));
   }
 
   logIn = event => {
@@ -48,8 +48,8 @@ class LogIn extends Component {
         <div className="log-in-container-form">
           {this.state.user ?
             <div>
-              <p>Hello {this.state.user.email}</p>
-              <button onClick={this.signOut}>Sign out</button>
+              <p className="log-out-message">Hej Superbohaterze jesteś zalogowany jako {this.state.user.email} Pamiętaj, że zawsze możesz się wylogować, jednak grozi to utratą supermocy!</p>
+              <button className="log-out-button" onClick={this.signOut}>Wyloguj się</button>
             </div>
             :
             <div className="log-in-container-input-box">
@@ -78,7 +78,7 @@ class LogIn extends Component {
           <div className="logo-log-in-container">
             <img className="logo-log-in" src={logo} alt=""/>
           </div>
-          <button className="back-button" onClick={() => this.props.history.push('/')}>Powrót</button>
+          <button className="back-button" onClick={() => this.props.history.push('/')}>Powrót do serwisu</button>
         </div>
       </div>
 

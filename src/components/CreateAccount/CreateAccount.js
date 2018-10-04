@@ -20,10 +20,10 @@ class CreateAccount extends Component {
     )
   }
 
-  signOut() {
+  signOut = () => {
     auth().signOut()
-  .then(() => this.setState({...initialState}))
-      .catch(() => window.alert('Sign out failed!'));
+      .then(() => this.setState({...initialState}))
+      .catch(() => window.alert('Wylogowanie nie powiodło się!'));
   }
 
   handleSubmit = event => {
@@ -49,8 +49,8 @@ class CreateAccount extends Component {
         <div className="create-account-container-form">
           {this.state.user ?
             <div>
-              <p>Hello {this.state.user.email}</p>
-              <button onClick={this.signOut}>Sign ou</button>
+              <p>Hej Superbohaterze {this.state.user.email} Czy napewno chcesz się wylogować i stracić swoje moce?</p>
+              <button onClick={this.signOut}>Wyloguj się</button>
             </div>
             :
             <div className="create-account-container-input-box">
@@ -79,7 +79,7 @@ class CreateAccount extends Component {
           <div className="logo-create-account-container">
             <img className="logo-create-account" src={logo} alt=""/>
           </div>
-          <button className="back-button" onClick={() => this.props.history.push('/')}>Powrót</button>
+          <button className="back-button" onClick={() => this.props.history.push('/')}>Powrót do serwisu</button>
         </div>
       </div>
 

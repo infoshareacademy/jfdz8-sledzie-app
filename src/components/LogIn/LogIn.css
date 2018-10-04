@@ -55,6 +55,7 @@
 }
 .log-in-button:hover {
     background: #870000;
+    transition: 0.5s ease-in;
 }
 .back-button {
     display: block;
@@ -66,6 +67,7 @@
 .back-button:hover {
     color: #ff0000;
     cursor: pointer;
+    transition: 0.5s ease-in;
 }
 .logo-log-in-container {
     position: relative;
@@ -118,6 +120,7 @@
 }
 .punishment-back-button:hover {
     color: #ff0000;
+    transition: 0.5s ease-in;
 }
 .log-out-message {
     padding: 40px 10px 20px 10px;
@@ -136,4 +139,5 @@
 }
 .log-out-button:hover {
     background: #870000;
+    transition: 0.5s ease-in;
 }

@@ -16,6 +16,7 @@
     text-transform: uppercase;
     border-left: 1px solid #626262;
     border-right: 1px solid #626262;
+    transition: 0.5s ease-in;
 }
 .btn-sign-in:active, .btn-sign-in:focus {
     outline: none;
@@ -38,8 +39,23 @@
     cursor: pointer;
 }
 .login-bar-user-name {
-
+    margin-left: 20px;
+    padding-top: 15px;
+    color: #fff;
+    display: inline-block;
+    float: left;
 }
 .btn-sign-out {
+    height: 30px;
+    margin-left: 20px;
+    margin-top: 10px;
 
+    padding: 5px 10px 0 10px;
+    color: #fff;
+    display: inline-block;
+    text-decoration: none;
+}
+.btn-sign-out:hover {
+    background: #ff0000;
+    transition: 0.5s ease-in;
 }

@@ -49,7 +49,7 @@ class CreateAccount extends Component {
         <div className="create-account-container-form">
           {this.state.user ?
             <div>
-              <p>Witaj {this.state.user.email}</p>
+              <p>Hej Superbohaterze {this.state.user.email} Czy napewno chcesz się wylogować i stracić swoje moce?</p>
               <button onClick={this.signOut}>Wyloguj się</button>
             </div>
             :
@@ -79,7 +79,7 @@ class CreateAccount extends Component {
           <div className="logo-create-account-container">
             <img className="logo-create-account" src={logo} alt=""/>
           </div>
-          <button className="back-button" onClick={() => this.props.history.push('/')}>Powrót</button>
+          <button className="back-button" onClick={() => this.props.history.push('/')}>Powrót do serwisu</button>
         </div>
       </div>
 

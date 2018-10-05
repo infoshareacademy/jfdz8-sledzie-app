@@ -9,17 +9,34 @@ const Container = styled.div`
   width: 90%;
   margin: 0 auto;
   margin-bottom: 40px;
+  display: flex;
+  flex-wrap: wrap;
 `
 const Video = styled.div`
-  float: left;
-  width: 50%;
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0
 `
+
+const Iframe = styled.iframe`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+`
+
 const Feature = styled.div`
   padding-top: 50px;
-  overflow: auto;
-  height: 390px;
-  margin-top: 80px;
+  height: auto;
   box-shadow: 10px 10px 5px #D3D3D3;
+
+  
+  @media (min-width: 992px) {
+    flex: 1
+  }
 `
 
 const Title = styled.p`
@@ -91,7 +108,7 @@ class Movies extends Component {
                     <Fragment>
                       <Container>
                         <Video>
-                          <iframe width="700" height="390" title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
+                          <Iframe  title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
                         </Video>
                         <Feature>
                           <Title>{movie.title}{" "}{movie.year}</Title>

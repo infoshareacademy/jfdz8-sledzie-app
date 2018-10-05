@@ -1,5 +1,4 @@
 .login-bar {
-    position: relative;
     height: 50px;
     width: 100%;
     background: #3b3b3b;
@@ -27,15 +26,12 @@
     background: #000;
 }
 .logo-bar-container {
-    position: absolute;
-    top: 4px;
-    left: 45%;
     display: block;
     margin: auto;
-    /*margin-top: 4px;*/
-    width: 190px;
+    margin-top: 4px;
+    width: 200px;
     height: 100%;
-    /*background: #fff;*/
+    background: #fff;
 }
 .login-bar-logo {
     width: 100%;

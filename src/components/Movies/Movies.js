@@ -4,39 +4,43 @@ import './Movies.css'
 import styled from 'styled-components'
 import filmwebImg from './filmweb_icon.jpg'
 import imdbImg from './imdb.jpg'
+import roundFilmweb from './roundfilmweb.jpg'
+import roundImdb from './roundimdb.png'
+
 
 const Container = styled.div`
   width: 90%;
   margin: 0 auto;
   margin-bottom: 40px;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; 
 `
-const Video = styled.div`
+const Wrapper = styled.div`
   flex: 1;
   overflow: hidden;
   position: relative;
   padding-bottom: 56.25%;
-  height: 0
 `
 
-const Iframe = styled.iframe`
+const Video = styled.iframe`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
 `
-
 const Feature = styled.div`
   padding-top: 50px;
+  padding-bottom: 80px;
+  overflow: hidden;
   height: auto;
   box-shadow: 10px 10px 5px #D3D3D3;
+  position: relative
 
-  
-  @media (min-width: 992px) {
-    flex: 1
-  }
+    @media (min-width: 992px) {
+      padding-left: 25px;
+      flex: 1 ; 
+    }
 `
 
 const Title = styled.p`
@@ -53,31 +57,65 @@ const Director = styled.div`
 `
 
 const Description = styled.div`
-  font-size: 18px;
+  font-size: 16px;
   padding-right: 40px;
   text-align: justify; 
   font-family: Montserrat, sans-serif; 
+  
+     @media (min-width: 992px) {
+      font-size: 18px;
+    }
 `
 
 const FilmwebImg = styled.img`
+display: none
   width: auto;
-  height: 8%;
+  height: 4%;
   float: right;
   
-  &:hover {
-    opacity: 0.5 
+    @media (min-width: 992px) {
+    display: inline;
+    height: 4%;
+      &:hover {
+        opacity: 0.5 
+    }
   }
 `
 
 const ImdbImg = styled.img`
+display: none;
   width: auto;
-  height: 8%;
+  height: 4%;
   float: right;
   padding-right: 40px;
   
-   &:hover {
-    opacity: 0.5 
-  }
+    @media (min-width: 992px) { 
+    display:inline;   
+     height: 4%;
+      &:hover {
+        opacity: 0.5 
+    }
+`
+
+const Div = styled.div`
+  
+  position: absolute;
+  bottom: 0;
+  right: 45%;
+  padding-top: 20px;
+  padding-bottom: 15px
+
+    @media (min-width: 992px) {
+      display: none
+    }
+`
+const RoundImdb = styled.img`
+  height: 50px;
+  padding-right: 15px;
+`
+
+const RoundFilmweb = styled.img`
+  height: 50px
 `
 
 class Movies extends Component {
@@ -107,9 +145,9 @@ class Movies extends Component {
                   movie => (
                     <Fragment>
                       <Container>
-                        <Video>
-                          <Iframe  title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
-                        </Video>
+                        <Wrapper>
+                          <Video  title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
+                        </Wrapper>
                         <Feature>
                           <Title>{movie.title}{" "}{movie.year}</Title>
                           <a href={movie.imdb} target="_blank">
@@ -118,6 +156,17 @@ class Movies extends Component {
                           <a href={movie.filmweb} target="_blank">
                             <FilmwebImg src={filmwebImg} alt="filmweb.pl"/>
                           </a>
+
+                          <Div>
+                            <a href={movie.imdb} target="_blank">
+                              <RoundImdb src={roundImdb} alt="imdb.com"/>
+                            </a>
+                            <a href={movie.filmweb} target="_blank">
+                              <RoundFilmweb src={roundFilmweb} alt="filmweb.pl"/>
+                            </a>
+                          </Div>
+
+
                           <br/>
                           <br/>
                           <Director>Reżyseria: {movie.directedBy}</Director><br/>

@@ -45,7 +45,7 @@ class App extends Component {
               />
               <Route
                 path="/CreateAccount"
-                render={() => <CreateAccount />}
+                render={() => <CreateAccount/>}
               />
               <Route
                 key={Date.now()}
@@ -60,7 +60,7 @@ class App extends Component {
             {heroes.map((hero => (
                 <Fragment key={hero.id}>
                   <Route
-                    path={`/hero/${hero.id}`}
+                    path={`/hero/${hero.id}` }
                     render={() => <Hero id={hero.id} name={hero.name}/>}
                   />
                   <Route

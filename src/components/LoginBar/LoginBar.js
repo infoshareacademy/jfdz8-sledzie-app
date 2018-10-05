@@ -39,13 +39,13 @@ class LoginBar extends Component {
               <p className="login-bar-user-name">Witaj {this.state.user.email}</p>
               <Link to="/LogIn" className="btn-sign-out">Wyloguj się</Link>
             </div>}
+          <div className="logo-bar-container">
+            <a href="/">
+              <img className="login-bar-logo" src={logo} alt=""/>
+            </a>
+          </div>
         </div>
         {this.state.enabled && <LoginForm closeBar={this.handleClick}/>}
-        <div className="logo-bar-container">
-          <a href="/">
-            <img className="login-bar-logo" src={logo} alt=""/>
-          </a>
-        </div>
       </React.Fragment>
     )
   }

@@ -10,6 +10,7 @@ import LogIn from "../LogIn/LogIn";
 import CreateAccount from "../CreateAccount/CreateAccount";
 import ComicsMenu from '../ComicsMenu/ComicsMenu'
 import Movies from "../Movies/Movies";
+import VideoBackground from "../Video_Background/VideoBackground"
 
 
 class App extends Component {
@@ -36,7 +37,8 @@ class App extends Component {
               <LoginBar/>
               <NavMenu/>
 
-              <Route exact path="/"/>
+              <Route exact path="/"
+              render={() => <VideoBackground/>}/>
               <Route
                 path="/LogIn"
                 render={() => <LogIn />}

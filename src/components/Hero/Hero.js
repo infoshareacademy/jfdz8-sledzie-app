@@ -1,24 +1,29 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import './Hero.css'
 import styled from 'styled-components'
 import { database } from '../../firebase';
 import {Link} from "react-router-dom";
 
+
 const Container = styled.div`
-  width: 80%;
+  width: 90%;
 `
 const ImgDiv = styled.div`
-  width: 40%;
-  height: 600px;
-  float: left
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  
+  @media (min-width: 992px) {
+    width: 40%;
+    height: 600px;
+    float: left
+  }
 `
 const TextDiv = styled.div`
+  position: relative;
   height: 525px;
 `
-
-// const HeaderDiv = styled.div`
-//
-// `
 
 const Img = styled.img`
   width: 80%;
@@ -27,17 +32,33 @@ const Img = styled.img`
   margin-top: 50px;
 `
 const H1 = styled.h1`
-  margin-left: -250px;
-  margin-top: 65px;
+  font-family: Marvel, sans-serif;
+  margin-top: 15px;
+  text-align: center
+  
+  @media (min-width: 992px) {
+    text-align: initial;
+    margin-left: -250px;
+    margin-top: 65px;
+  }
 `
 const P = styled.p`
-  margin-left: -250px;
-  margin-top: 15px;
-  font-size: 19px;
-  font-family: Montserrat, sans-serif;
-  text-align: justify
+    margin-left: 50px;
+    padding-bottom: 40px;
+    font-size: 19px;
+    font-family: Montserrat, sans-serif;
+    text-align: justify
+    
+  @media (min-width: 992px) {
+    margin-left: -250px;
+    margin-top: 15px;
+    font-size: 19px;
+    font-family: Montserrat, sans-serif;
+    text-align: justify
+    }
 `
 const HeroBar = styled(Link)`
+  font-family: Marvel, sans-serif;
   text-decoration: none;
   display: inline;
   color: black;
@@ -55,13 +76,21 @@ const HeroBar = styled(Link)`
     }
 `
 const Ul = styled.div`
-  text-align: center;
-  font-weight: bolder;
+    text-align: center;
+    font-weight: bolder;
+    padding-top: 20px;
+
+
+  @media (min-width: 992px) {
+    text-align: center;
+    font-weight: bolder;
+  }
 `
 const Button = styled.button`
   text-transform: uppercase;
+  font-style: italic;
   color: black;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: lighter;
   margin-left: 15px;
   background: white;
@@ -75,16 +104,20 @@ const Button = styled.button`
     }
 `
 const FeatureBar = styled(Link) `
+  font-family: Marvel, sans-serif;
   text-decoration: none;
   color: black;
   font-size: 20px;
   padding: 15px;
   font-weight: bolder;
-  -o-transition:.5s;
-  -ms-transition:.5s;
-  -moz-transition:.5s;
-  -webkit-transition:.5s;
-  transition:.5s;
+  
+  @media (min-width: 992px) {
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    }
   
     &:hover {
       color: #CC0000
@@ -124,8 +157,8 @@ class Hero extends Component {
     const path = this.state.hero && `${this.state.hero.thumbnail.path}.${this.state.hero.thumbnail.extension}`
     const name = this.props.name
     return (
-      <React.Fragment>
-        <Link to="/heroes"><Button><span className="arrow left"/>Cofnij</Button></Link>
+      <Fragment>
+        <Link to="/heroes"><Button><span className="arrow left"/>Wróć do: bohaterowie</Button></Link>
           <Ul>
             <HeroBar to="/hero/1009268">Deadpool</HeroBar>
             <HeroBar to="/hero/1009368">Iron Man</HeroBar>
@@ -144,7 +177,7 @@ class Hero extends Component {
           <TextDiv>
               <H1 className="hero-name">{name}</H1>
               <FeaturesDiv>
-                <FeatureBar to="/movies" >Filmy</FeatureBar>
+                <FeatureBar to={`/hero/movies/${this.props.id}`} >Filmy</FeatureBar>
                 <FeatureBar to={`/hero/comics/${this.props.id}`}>Komiksy</FeatureBar>
                 <button className="fav-btn">
                   <i className="fab fa-gratipay" title="Dodaj do ulubionych"/>
@@ -153,7 +186,7 @@ class Hero extends Component {
             <P className="hero-desc">{ (this.state.details && this.state.details.description) || 'Work in progress' }</P>
           </TextDiv>
         </Container>
-      </React.Fragment>
+      </Fragment>
     )
   }
 }

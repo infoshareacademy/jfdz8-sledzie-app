@@ -211,8 +211,6 @@ class Movies extends Component {
                           <RoundFilmweb src={roundFilmweb} alt="filmweb.pl"/>
                         </a>
                       </Div>
-
-
                       <br/>
                       <br/>
                       <Director>Reżyseria: {movie.directedBy}</Director><br/>

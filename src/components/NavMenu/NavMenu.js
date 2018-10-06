@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
 import './NavMenu.css';
+import Characters from "../Characters/Characters";
 
 
 class NavMenu extends Component {
@@ -13,19 +14,19 @@ class NavMenu extends Component {
     const options = [
       null,
       {
-        render: () => <div className='hidden-div-test'>Sekcja super mocy</div>,
+        render: () => <div className='hidden-div'><div className="hidden-div-small"><Characters hideHeader smallHeroes /></div></div>,
         label: 'superbohaterowie',
         href: '/heroes',
         iconSrc : ''
       },
       {
-        render: () => <div className='hidden-div-test'>Komiksy czytamy</div>,
+        render: () => <div className='hidden-div'>Komiksy czytamy</div>,
         label: 'komiksy',
         href: '/komiksy',
         iconSrc : ''
       },
       {
-        render: () => <div className='hidden-div-test'>Filmy oglądamy</div>,
+        render: () => <div className='hidden-div'>Filmy oglądamy</div>,
         label: 'filmy',
         href: '/filmy',
         iconSrc : ''
@@ -38,7 +39,7 @@ class NavMenu extends Component {
             {
               options.map(
                 (option, index) => option && (
-                  <li key={index} onMouseOver={() => this.setState({show: index})} className='nav-bar-item'><Link to={option.href}><img src={option.iconSrc}/>{option.label}</Link></li>
+                  <li key={index} onMouseOver={() => this.setState({show: index})} className='nav-bar-item'><Link className="nav-bar-link" to={option.href}><img src={option.iconSrc}/>{option.label}</Link></li>
                 )
               )
             }

@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { Link } from 'react-router-dom'
 import background from './images/bg4.png'
-import './Characters.css'
 import deadpool from './images/Deadpool.png'
 import deadpoolHover from './images/DeadpoolHover.png'
 import ironman from './images/Ironman.png'
@@ -21,6 +20,8 @@ import thorHover from './images/ThorHover.png'
 import drstrange from './images/DrStrange.png'
 import drstrangeHover from './images/DrStrangeHover.png'
 import styled from 'styled-components'
+import './Characters.css'
+
 
 const Header = styled.header`
   height: 250px;
@@ -53,7 +54,7 @@ const Div = styled.div`
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  margin-left: 10px
+  margin-left: 10px;
      
   @media (min-width: 992px) {
     align-items:center;
@@ -113,13 +114,17 @@ class Characters extends Component {
   render() {
     return (
       <Fragment>
-        <Header>
-          <Img src={background} alt=""/>
-          <H1>Superbohaterowie</H1>
-        </Header>
+        { this.props.hideHeader === true ? null :
+          <Header>
+            <Img src={background} alt=""/>
+            <H1>Superbohaterowie</H1>
+          </Header>
+        }
+
         {/*<Link to="/"><Button><span className="arrow left"/>Do głównej</Button></Link>*/}
-        <Div>
+        <Div className={this.props.smallHeroes && 'smallHeroes'}>
           <Link to="/hero/1009268"><HeroImg src={this.state.imgDeadpool}
+
                                         alt=""
                                         onMouseOver={() => this.setState({imgDeadpool: deadpoolHover})}
                                         onMouseOut={() => this.setState({imgDeadpool: deadpool})}/>

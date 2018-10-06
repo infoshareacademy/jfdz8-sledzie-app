@@ -19,16 +19,28 @@
     cursor: pointer;
     text-align: center;
 }
+.nav-bar-link {
+    color: #000;
+    text-decoration: none;
+}
 .nav-bar-item:hover {
     border-bottom: solid 1px #ff4918;
 }
-.hidden-div-test {
+.box-hidden-div {
     position: absolute;
     z-index: 10;
-    height: 100px;
+    height: 100vh;
+    width: 100%;
+}
+.hidden-div {
+    position: absolute;
+    z-index: 10;
+    height: 20vh;
     background: #fff;
     width: 100%;
 }
-route {
-    color: #000;
+.hidden-div-small {
+    position: absolute;
+    width: 100%;
+    background: #fff;
 }

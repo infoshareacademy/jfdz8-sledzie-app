@@ -104,7 +104,7 @@ class ComicsMenu extends Component {
   }
 
   componentDidMount () {
-    fetch(`https://gateway.marvel.com/v1/public/comics?limit=100&apikey=5b4ca4fb9704024334914e17aabbb5a3`)
+    fetch(`https://gateway.marvel.com/v1/public/comics?limit=80&apikey=5b4ca4fb9704024334914e17aabbb5a3`)
       .then(response => response.json())
       .then(payload => this.setState({comicsList: payload.data.results}))
   }

@@ -70,6 +70,16 @@ const Poster = styled.img`
     width: 350px;
     height: 500px;
     padding: 10px;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+    transition:.5s;
+    
+      &:hover {
+      opacity: 0.8
+      }
+    
   }
 `
 const Button = styled.button`

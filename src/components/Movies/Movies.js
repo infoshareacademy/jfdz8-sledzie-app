@@ -13,45 +13,70 @@ const Container = styled.div`
   margin: 0 auto;
   margin-bottom: 40px;
   display: flex;
-  flex-wrap: wrap; 
+  flex-direction: column;
   
-   @media (min-width: 992px) {
+    :first-child {
+      margin-top: 100px
+    }
+  
+  @media (min-width: 992px) {
+    flex-direction: row;
   } 
 `
-const Wrapper = styled.div`
-  flex: 1;
+
+const LinkWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  padding-bottom: 15px;
+    
+  @media (min-width: 992px) {
+    top: 5px;
+    right: 5px;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    padding-bottom: 0;
+  }
+`
+
+const MovieWrapper = styled.div`
   overflow: hidden;
   position: relative;
   padding-bottom: 56.25%;
   
   @media (min-width: 992px) {
-    
+    flex: 1;
+    padding-right: 30px;
   }
-    
 `
+
+const FlexMovieWrapper = styled.div`
+  @media (min-width: 992px) {
+    flex: 1;
+    padding-right: 30px;
+  }
+`
+
 const Video = styled.iframe`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  
-   @media (min-width: 992px) {
-      
-  }
 `
 
 const Feature = styled.div`
-  padding-top: 50px;
+  padding-top: 20px;
   padding-bottom: 80px;
-  overflow: hidden;
-  height: auto;
   box-shadow: 10px 10px 5px #D3D3D3;
-  position: relative
-
-    @media (min-width: 992px) {
-       
-    }
+  
+  @media (min-width: 992px) {
+    flex: 1;
+    padding-bottom: 15px;
+    position: relative;
+  }
 `
 
 const Title = styled.p`
@@ -73,20 +98,23 @@ const Description = styled.div`
   text-align: justify; 
   font-family: Montserrat, sans-serif; 
   
-     @media (min-width: 992px) {
-      font-size: 18px;
-    }
+  @media (min-width: 992px) {
+    font-size: 18px;
+  }
 `
 
 const FilmwebImg = styled.img`
-display: none
+  display: none
   width: auto;
   height: 4%;
   float: right;
+  padding-bottom: 10px;
   
-    @media (min-width: 992px) {
+  @media (min-width: 992px) {
+    padding-top: 20px;
     display: inline;
-    height: 4%;
+    height: 50px;
+    
       &:hover {
         opacity: 0.5 
     }
@@ -94,31 +122,31 @@ display: none
 `
 
 const ImdbImg = styled.img`
-display: none;
+  display: none;
   width: auto;
   height: 4%;
   float: right;
   padding-right: 40px;
+ 
   
-    @media (min-width: 992px) { 
-      display:inline;   
-      height: 4%;
-        &:hover {
-          opacity: 0.5 
+  @media (min-width: 992px) { 
+    padding-top: 20px;
+    display:inline;   
+    height: 50px;
+  
+      &:hover {
+        opacity: 0.5 
       }
-    )
+  }
 `
 
 const Div = styled.div`
   position: absolute;
-  bottom: 0;
-  right: 45%;
-  padding-top: 20px;
-  padding-bottom: 15px;
+  right: 10%;
 
-    @media (min-width: 992px) {
-      display: none
-    }
+  @media (min-width: 992px) {
+    display: none
+  }
 `
 const RoundImdb = styled.img`
   height: 50px;
@@ -148,50 +176,53 @@ class Movies extends Component {
   }
 
   render () {
-      return (
-        <Fragment>
-          <div>
-              {
-                this.state.details && this.state.details.movies.map(
-                  movie => (
-                    <Fragment>
-                      <Container>
-                        <Wrapper>
-                          <Video  title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
-                        </Wrapper>
-                        <Feature>
-                          <Title>{movie.title}{" "}{movie.year}</Title>
-                          <a href={movie.imdb} target="_blank">
-                            <ImdbImg src={imdbImg} alt="imdb.com"/>
-                          </a>
-                          <a href={movie.filmweb} target="_blank">
-                            <FilmwebImg src={filmwebImg} alt="filmweb.pl"/>
-                          </a>
-
-                          <Div>
-                            <a href={movie.imdb} target="_blank">
-                              <RoundImdb src={roundImdb} alt="imdb.com"/>
-                            </a>
-                            <a href={movie.filmweb} target="_blank">
-                              <RoundFilmweb src={roundFilmweb} alt="filmweb.pl"/>
-                            </a>
-                          </Div>
-
-
-                          <br/>
-                          <br/>
-                          <Director>Reżyseria: {movie.directedBy}</Director><br/>
-                          <Description>{movie.description}</Description>
-                        </Feature>
-                      </Container>
-                    </Fragment>
-                  ))
-              }
-          </div>
-        </Fragment>
+    return (
+      <Fragment>
+        <div>
+          {
+            this.state.details && this.state.details.movies.map(
+              movie => (
+                <Fragment>
+                  <Container>
+                    <FlexMovieWrapper>
+                      <MovieWrapper>
+                        <Video  title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
+                      </MovieWrapper>
+                    </FlexMovieWrapper>
+                    <Feature>
+                      <Title>{movie.title}{" "}{movie.year}</Title>
+                      <LinkWrapper>
+                        <a href={movie.imdb} target="_blank">
+                          <ImdbImg src={imdbImg} alt="imdb.com"/>
+                        </a>
+                        <a href={movie.filmweb} target="_blank">
+                          <FilmwebImg src={filmwebImg} alt="filmweb.pl"/>
+                        </a>
+                      </LinkWrapper>
+                      <Div>
+                        <a href={movie.imdb} target="_blank">
+                          <RoundImdb src={roundImdb} alt="imdb.com"/>
+                        </a>
+                        <a href={movie.filmweb} target="_blank">
+                          <RoundFilmweb src={roundFilmweb} alt="filmweb.pl"/>
+                        </a>
+                      </Div>
 
 
-      )
+                      <br/>
+                      <br/>
+                      <Director>Reżyseria: {movie.directedBy}</Director><br/>
+                      <Description>{movie.description}</Description>
+                    </Feature>
+                  </Container>
+                </Fragment>
+              ))
+          }
+        </div>
+      </Fragment>
+
+
+    )
   }
 
 }

@@ -1,42 +1,42 @@
-@media (min-width: 992px) {
-    img {
-        width: 180px;
-        text-align: center;
-    }
-}
+/*@media (min-width: 992px) {*/
+    /*img {*/
+        /*width: 180px;*/
+        /*text-align: center;*/
+    /*}*/
+/*}*/
 
 
-span {
-    border: solid black;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 6px;
-    margin-left: 20px;
-    margin-top: 20px;
+/*span {*/
+    /*border: solid black;*/
+    /*border-width: 0 2px 2px 0;*/
+    /*display: inline-block;*/
+    /*padding: 6px;*/
+    /*margin-left: 20px;*/
+    /*margin-top: 20px;*/
 
-}
+/*}*/
 
 
-.left {
-    transform: rotate(135deg);
-    -webkit-transform: rotate(135deg);
-}
-.comics_container {
-    /*margin: 15px;*/
-    box-shadow: 10px 10px 5px #D3D3D3;
-    -o-transition: .5s;
-    -moz-transition: .5s;
-    -webkit-transition: .5s;
-    transition: .5s;
-    display: inline-block;
-    padding: 6px;
-    margin-left: 20px;
-    margin-top: 20px;
-}
+/*.left {*/
+    /*transform: rotate(135deg);*/
+    /*-webkit-transform: rotate(135deg);*/
+/*}*/
+/*.comics_container {*/
+    /*!*margin: 15px;*!*/
+    /*box-shadow: 10px 10px 5px #D3D3D3;*/
+    /*-o-transition: .5s;*/
+    /*-moz-transition: .5s;*/
+    /*-webkit-transition: .5s;*/
+    /*transition: .5s;*/
+    /*display: inline-block;*/
+    /*padding: 6px;*/
+    /*margin-left: 20px;*/
+    /*margin-top: 20px;*/
+/*}*/
 
-.comics_container:hover {
-     margin-top: -2px;
-     opacity: 0.8
+/*.comics_container:hover {*/
+     /*margin-top: -2px;*/
+     /*opacity: 0.8*/
 
-}
+/*}*/
 

@@ -1,24 +1,21 @@
 import React, { Component, Fragment } from 'react'
-import background from '../Characters/images/bg4.png'
+import background from './comics_img.png'
 import './ComicsMenu.css'
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
-
-
-
 
 const Header = styled.header`
   height: 250px;
   width: 100%;
   overflow: hidden;
   position:relative;
-
 `
 const Img = styled.img`
   object-fit: contain;
   position: absolute;
   width: 100%;
   transition: all 1s ease-in-out;
+  filter: brightness(70%);
     
     &:hover {
     transform: scale(1.1);
@@ -34,6 +31,7 @@ const H1 = styled.h1`
   font-size: 50px;
 `
 const Button = styled.button`
+  font-family: Montserrat, sans-serif; 
   text-transform: uppercase;
   color: black;
   font-size: 15px;
@@ -41,6 +39,7 @@ const Button = styled.button`
   margin-left: 15px;
   margin-top: 20px;
   background: white;
+  cursor: pointer;
  
     &:focus {
      outline:0;
@@ -51,7 +50,52 @@ const Button = styled.button`
     }
 `
 
+const ComicsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px
+  margin-top: 60px
+`
+
+const CoverImg = styled.img`
+  margin: 15px;
+  width: 450px;
+  padding-top: 20px;
+  height: auto;
+  box-shadow: 10px 10px 5px #D3D3D3;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+  
+    &:hover {
+      margin-top: -2px;
+      opacity: 0.8
+    }
+    
+    @media (min-width: 992px) {
+      width: 300px;
+    }
+`
+
+const ComicsWrapper = styled.div`
+  text-align: center;
+  padding-top: 10px
+
+  @media (min-width: 992px) {
+    width: 400px;
+  }
+`
+
+const Title = styled.div`
+  font-weight: bolder;
+  font-size: 20px;
+`
+
 const coverUrl = comics => `${comics.thumbnail.path}.${comics.thumbnail.extension}`
+const comicsTitle = comics => `${comics.title}`
 
 class ComicsMenu extends Component {
 
@@ -74,20 +118,20 @@ class ComicsMenu extends Component {
               <Img src={background} alt=""/>
               <H1>Komiksy</H1>
           </Header>
-          <Link to="/"><Button><span className="arrow left"/>Powrót</Button></Link>
-        <div>
+          <Link to="/"><Button><span className="arrow left"/>Wróć do: główna</Button></Link>
+        <ComicsContainer>
             {
                 this.state.comicsList.filter(
                     comics => coverUrl(comics) !== urlToDelete
                 ).map(
                 comics => (
-                    <div className="comics_container">
-                        <img src={coverUrl(comics)} />
-                        {/*<h3>{comics.title}</h3>*/}
-                    </div>
+                    <ComicsWrapper>
+                      <CoverImg src={coverUrl(comics)} />
+                      <Title>{comicsTitle(comics)}</Title>
+                    </ComicsWrapper>
                 )
             )}
-        </div>
+        </ComicsContainer>
       </Fragment>
     )
   }

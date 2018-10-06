@@ -94,6 +94,7 @@ const Button = styled.button`
   font-weight: lighter;
   margin-left: 15px;
   background: white;
+  cursor: pointer;
  
     &:focus {
      outline:0;

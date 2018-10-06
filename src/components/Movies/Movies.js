@@ -14,21 +14,33 @@ const Container = styled.div`
   margin-bottom: 40px;
   display: flex;
   flex-wrap: wrap; 
+  
+   @media (min-width: 992px) {
+  } 
 `
 const Wrapper = styled.div`
   flex: 1;
   overflow: hidden;
   position: relative;
   padding-bottom: 56.25%;
+  
+  @media (min-width: 992px) {
+    
+  }
+    
 `
-
 const Video = styled.iframe`
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  
+   @media (min-width: 992px) {
+      
+  }
 `
+
 const Feature = styled.div`
   padding-top: 50px;
   padding-bottom: 80px;
@@ -38,8 +50,7 @@ const Feature = styled.div`
   position: relative
 
     @media (min-width: 992px) {
-      padding-left: 25px;
-      flex: 1 ; 
+       
     }
 `
 
@@ -90,20 +101,20 @@ display: none;
   padding-right: 40px;
   
     @media (min-width: 992px) { 
-    display:inline;   
-     height: 4%;
-      &:hover {
-        opacity: 0.5 
-    }
+      display:inline;   
+      height: 4%;
+        &:hover {
+          opacity: 0.5 
+      }
+    )
 `
 
 const Div = styled.div`
-  
   position: absolute;
   bottom: 0;
   right: 45%;
   padding-top: 20px;
-  padding-bottom: 15px
+  padding-bottom: 15px;
 
     @media (min-width: 992px) {
       display: none

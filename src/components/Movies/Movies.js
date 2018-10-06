@@ -13,22 +13,48 @@ const Container = styled.div`
   margin: 0 auto;
   margin-bottom: 40px;
   display: flex;
-  flex-wrap: wrap; 
+  flex-direction: column;
   
-   @media (min-width: 992px) {
+  @media (min-width: 992px) {
+    flex-direction: row;
   } 
 `
-const Wrapper = styled.div`
-  flex: 1;
+
+const LinkWrapper = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  padding-bottom: 15px;
+    
+  @media (min-width: 992px) {
+    top: 5px;
+    right: 5px;
+    bottom: auto;
+    left: auto;
+    transform: none;
+    padding-bottom: 0;
+  }
+`
+
+const MovieWrapper = styled.div`
   overflow: hidden;
   position: relative;
   padding-bottom: 56.25%;
   
   @media (min-width: 992px) {
-    
+    flex: 1;
+    padding-right: 30px;
   }
-    
 `
+
+const FlexMovieWrapper = styled.div`
+  @media (min-width: 992px) {
+    flex: 1;
+    padding-right: 30px;
+  }
+`
+
 const Video = styled.iframe`
   position: absolute;
   top: 0;
@@ -44,14 +70,13 @@ const Video = styled.iframe`
 const Feature = styled.div`
   padding-top: 50px;
   padding-bottom: 80px;
-  overflow: hidden;
-  height: auto;
   box-shadow: 10px 10px 5px #D3D3D3;
-  position: relative
 
-    @media (min-width: 992px) {
-       
-    }
+  @media (min-width: 992px) {
+     flex: 1;
+     padding-bottom: 15px;
+     position: relative;
+  }
 `
 
 const Title = styled.p`
@@ -86,7 +111,7 @@ display: none
   
     @media (min-width: 992px) {
     display: inline;
-    height: 4%;
+    height: 25px;
       &:hover {
         opacity: 0.5 
     }
@@ -102,7 +127,7 @@ display: none;
   
     @media (min-width: 992px) { 
       display:inline;   
-      height: 4%;
+      height: 25px;
         &:hover {
           opacity: 0.5 
       }
@@ -156,18 +181,21 @@ class Movies extends Component {
                   movie => (
                     <Fragment>
                       <Container>
-                        <Wrapper>
-                          <Video  title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
-                        </Wrapper>
+                        <FlexMovieWrapper>
+                          <MovieWrapper>
+                            <Video  title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
+                          </MovieWrapper>
+                        </FlexMovieWrapper>
                         <Feature>
                           <Title>{movie.title}{" "}{movie.year}</Title>
-                          <a href={movie.imdb} target="_blank">
-                            <ImdbImg src={imdbImg} alt="imdb.com"/>
-                          </a>
-                          <a href={movie.filmweb} target="_blank">
-                            <FilmwebImg src={filmwebImg} alt="filmweb.pl"/>
-                          </a>
-
+                          <LinkWrapper>
+                            <a href={movie.imdb} target="_blank">
+                              <ImdbImg src={imdbImg} alt="imdb.com"/>
+                            </a>
+                            <a href={movie.filmweb} target="_blank">
+                              <FilmwebImg src={filmwebImg} alt="filmweb.pl"/>
+                            </a>
+                          </LinkWrapper>
                           <Div>
                             <a href={movie.imdb} target="_blank">
                               <RoundImdb src={roundImdb} alt="imdb.com"/>

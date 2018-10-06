@@ -11,7 +11,8 @@ import CreateAccount from "../CreateAccount/CreateAccount";
 import ComicsMenu from '../ComicsMenu/ComicsMenu'
 import Movies from "../Movies/Movies";
 import VideoBackground from "../Video_Background/VideoBackground"
-
+import MoviesMenu from "../MoviesMenu/MoviesMenu";
+import Movie from "../Movie/Movie"
 
 class App extends Component {
 
@@ -28,6 +29,29 @@ class App extends Component {
           {id: 1009220, name: "Kapitan Ameryka"},
           {id: 1009189, name: "Czarna Wdowa"}
       ]
+
+    const movies = [
+          {id: 101, name: "Iron Man"},
+          {id: 102, name: "Incredible Hulk"},
+          {id: 103, name: "Iron Man 2"},
+          {id: 104, name: "Thor"},
+          {id: 105, name: "Captain America: The First Avenger"},
+          {id: 106, name: "Avengers"},
+          {id: 107, name: "Iron Man 3"},
+          {id: 108, name: "Thor: The Dark World"},
+          {id: 109, name: "Captain America: The Winter Soldier"},
+          {id: 110, name: "Guardians of the Galaxy vol. 1"},
+          {id: 111, name: "Avengers: Age of Ultron"},
+          {id: 112, name: "Ant-Man"},
+          {id: 113, name: "Spider-Man: Homecoming"},
+          {id: 114, name: "Guardians of the Galaxy vol. 2"},
+          {id: 115, name: "Deadpool 1"},
+          {id: 116, name: "Deadpool 2"},
+          {id: 117, name: "Captain America: Civil War"},
+          {id: 118, name: "Avengers: Infinity War"},
+          {id: 119, name: "Thor: Ragnarok"},
+          {id: 120, name: "Doctor Strange"},
+    ]
 
     return (
       <div className="App">
@@ -56,6 +80,20 @@ class App extends Component {
                 path="/comics"
                 render={() => <ComicsMenu/>}
               />
+              <Route
+                path="/movies"
+                render={() => <MoviesMenu/>}
+              />
+
+
+              {movies.map((movie => (
+                <Fragment key={movie.id}>
+                  <Route
+                    path={`/movie/${movie.id}`}
+                    render={() => <Movie id={movie.id}/>}
+                  />
+                </Fragment>
+              )))}
 
             {heroes.map((hero => (
                 <Fragment key={hero.id}>

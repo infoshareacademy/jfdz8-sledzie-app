@@ -5,7 +5,7 @@ const Video = styled.video`
     width: auto%;
     height: auto;
     position: fixed;
-    top: 50%;
+    top: 52%;
     left: 50%;
     min-width: 100%;
     min-height: 100%;

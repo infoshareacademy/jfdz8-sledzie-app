@@ -3,30 +3,35 @@ import background from './avengers.jpg'
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 
-import antmanCover from './images/ant_man.jpeg'
-import avengersCover from './images/avengers.jpeg'
-import avengers2Cover from './images/avengers_2.jpeg'
-import capitanCover from './images/capitan_america.jpeg'
-import capitan2Cover from './images/capitan_america_2.jpeg'
-import guardiansCover from './images/guardians_of_the_galaxy.jpeg'
+import antmanCover from './images/antman.jpg'
+import avengersCover from './images/avengers2012.jpg'
+import avengers2Cover from './images/ultron.jpg'
+import capitanCover from './images/Captain_America_The_First_Avenger_poster.jpg'
+import capitan2Cover from './images/captain_winter.jpg'
+import guardiansCover from './images/guardians1.jpg'
 import hulkCover from './images/incrediblehulk.jpg'
 import ironmanCover from './images/ironman.jpg'
 import ironman2Cover from './images/ironman2.jpg'
-import ironman3Cover from './images/iron_man_3.jpeg'
+import ironman3Cover from './images/ironman3.jpg'
 import thorCover from './images/thor.jpeg'
-import thor2Cover from './images/thor_2.jpeg'
+import thor2Cover from './images/thor_dark.jpg'
 import spiderman from './images/spiderman.jpg'
+import guardians2 from './images/guardians2.jpg'
+import deadpool1 from './images/deadpool1.jpg'
+import deadpool2 from './images/deadpool2.jpg'
+import civilwar from './images/civilwar.jpeg'
+import infinitywar from './images/infinitywar.jpg'
+import ragnarok from './images/ragnarok.jpg'
+import strange from './images/strange.jpg'
 
 const Header = styled.header`
   height: 250px;
   width: 100%;
   overflow: hidden;
   position:relative;
-
 `
 const Img = styled.img`
   object-fit: contain;
- transform: scale(1);
   position: absolute;
   width: 100%;
   transition: all 1s ease-in-out;
@@ -47,10 +52,10 @@ const H1 = styled.h1`
 const Div = styled.div`
   display: flex;
   justify-content: center;
-  margin: 60px 30px 30px 30px;
+  margin: 60px 40px 30px 40px;
   flex-wrap: wrap;
-  
 
+  
   @media (min-width: 992px) {
     justify-content: space-between;
    
@@ -63,7 +68,8 @@ const Poster = styled.img`
 
   @media (min-width: 992px) {
     width: 350px;
-    height: auto;
+    height: 500px;
+    padding: 10px;
   }
 `
 const Button = styled.button`
@@ -101,6 +107,13 @@ class MoviesMenu extends Component {
     thor: thorCover,
     thor2: thor2Cover,
     spiderman: spiderman,
+    guardians2: guardians2,
+    deadpool1: deadpool1,
+    deadpool2: deadpool2,
+    civilwar: civilwar,
+    infinitywar: infinitywar,
+    ragnarok: ragnarok,
+    strange: strange
   }
 
   render() {
@@ -120,7 +133,6 @@ class MoviesMenu extends Component {
           <Link to="/movie/102">
             <Poster src={this.posters.hulk}
                     alt="Incredible Hulk"
-
             />
           </Link>
           <Link to="/movie/103">
@@ -176,6 +188,41 @@ class MoviesMenu extends Component {
           <Link to="/movie/113">
             <Poster src={this.posters.spiderman}
                     alt="Spider-Man: Homecoming"
+            />
+          </Link>
+          <Link to="/movie/114">
+            <Poster src={this.posters.guardians2}
+                    alt="Guardians of the Galaxy vol. 2"
+            />
+          </Link>
+          <Link to="/movie/115">
+            <Poster src={this.posters.deadpool1}
+                    alt="Deadpool vol. 1"
+            />
+          </Link>
+          <Link to="/movie/116">
+            <Poster src={this.posters.deadpool2}
+                    alt="Deadpool vol. 2"
+            />
+          </Link>
+          <Link to="/movie/117">
+            <Poster src={this.posters.civilwar}
+                    alt="Deadpool vol. 2"
+            />
+          </Link>
+          <Link to="/movie/118">
+            <Poster src={this.posters.infinitywar}
+                    alt="Avengers: Infinity War"
+            />
+          </Link>
+          <Link to="/movie/119">
+            <Poster src={this.posters.ragnarok}
+                    alt="Thor: Ragnarok"
+            />
+          </Link>
+          <Link to="/movie/120">
+            <Poster src={this.posters.strange}
+                    alt="Doctor Strange"
             />
           </Link>
         </Div>

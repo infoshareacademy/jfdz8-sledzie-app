@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import {database} from "../../firebase";
-import './Movie.css'
 import styled from 'styled-components'
 import filmwebImg from '../Movies/filmweb_icon.jpg'
 import imdbImg from '../Movies/imdb.jpg'

@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import background from '../Characters/images/bg4.png'
+import background from './avengers.jpg'
 import './MovieMenu.css'
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
@@ -10,12 +10,13 @@ import avengers2Cover from './images/avengers_2.jpeg'
 import capitanCover from './images/capitan_america.jpeg'
 import capitan2Cover from './images/capitan_america_2.jpeg'
 import guardiansCover from './images/guardians_of_the_galaxy.jpeg'
-import hulkCover from './images/hulk.jpeg'
-import ironmanCover from './images/iron_man.jpeg'
-import ironman2Cover from './images/iron_man_2.jpeg'
+import hulkCover from './images/incrediblehulk.jpg'
+import ironmanCover from './images/ironman.jpg'
+import ironman2Cover from './images/ironman2.jpg'
 import ironman3Cover from './images/iron_man_3.jpeg'
 import thorCover from './images/thor.jpeg'
 import thor2Cover from './images/thor_2.jpeg'
+import spiderman from './images/spiderman.jpg'
 
 const Header = styled.header`
   height: 250px;
@@ -26,6 +27,7 @@ const Header = styled.header`
 `
 const Img = styled.img`
   object-fit: contain;
+ transform: scale(1);
   position: absolute;
   width: 100%;
   transition: all 1s ease-in-out;
@@ -45,29 +47,24 @@ const H1 = styled.h1`
 `
 const Div = styled.div`
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
+  margin: 60px 30px 30px 30px;
   flex-wrap: wrap;
-  margin-left: 10px
-     
+  
+
   @media (min-width: 992px) {
-    align-items:center;
-    flex-wrap: nowrap;
-    margin-top: 20px;
-    margin-bottom: 20px
+    justify-content: space-between;
+   
    }
 `
-const CoverImg = styled.img`
+const Poster = styled.img`
+    width: 400px; 
     height: auto; 
-    width: auto; 
-    max-width: 500px; 
-    max-height: 500px;
     margin-bottom: 20px
 
   @media (min-width: 992px) {
-    width: 95%;
+    width: 350px;
     height: auto;
-    max-width: 100%; 
-    max-height: 100%;
   }
 `
 const Button = styled.button`
@@ -91,7 +88,7 @@ const Button = styled.button`
 
 class MovieMenu extends Component {
 
-    covers = {
+    posters = {
         antman: antmanCover,
         avengers: avengersCover,
         avengers2: avengers2Cover,
@@ -103,7 +100,8 @@ class MovieMenu extends Component {
         ironman2: ironman2Cover,
         ironman3: ironman3Cover,
         thor: thorCover,
-        thor2: thor2Cover
+        thor2: thor2Cover,
+        spiderman: spiderman,
     }
 
     render() {
@@ -115,66 +113,72 @@ class MovieMenu extends Component {
                 </Header>
                 <Link to="/"><Button><span className="arrow left"/>Powrót</Button></Link>
                 <Div>
-                    <Link to="/movie/101"><CoverImg src={this.covers.ironman}
-                                                   alt="Iron Man"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/101">
+                      <Poster src={this.posters.ironman}
+                                alt="Iron Man"
+                      />
                     </Link>
-                    <Link to="/movie/102"><CoverImg src={this.covers.hulk}
-                                                   alt="Incredible Hulk"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/102">
+                      <Poster src={this.posters.hulk}
+                                alt="Incredible Hulk"
+
+                      />
                     </Link>
-                    <Link to="/movie/103"><CoverImg src={this.covers.ironman2}
-                                                   alt="Iron Man 2"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/103">
+                      <Poster src={this.posters.ironman2}
+                                alt="Iron Man 2"
+                      />
                     </Link>
-                    <Link to="/movie/104"><CoverImg src={this.covers.thor}
-                                                   alt="Thor"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/104">
+                      <Poster src={this.posters.thor}
+                                alt="Thor"
+                      />
                     </Link>
-                    <Link to="/movie/105"><CoverImg src={this.covers.capitan}
-                                                   alt="Capitan America: The First Avenger"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/105">
+                      <Poster src={this.posters.capitan}
+                              alt="Capitan America: The First Avenger"
+                      />
                     </Link>
-                    <Link to="/movie/106"><CoverImg src={this.covers.avengers}
-                                                   alt="Avengers"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/106">
+                      <Poster src={this.posters.avengers}
+                              alt="Avengers"
+                      />
                     </Link>
-                    <Link to="/movie/107"><CoverImg src={this.covers.ironman3}
-                                                   alt="Iron Man 3"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/107">
+                      <Poster src={this.posters.ironman3}
+                              alt="Iron Man 3"
+                      />
                     </Link>
-                    <Link to="/movie/108"><CoverImg src={this.covers.thor2}
-                                                   alt="Thor: The Dark World"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/108">
+                      <Poster src={this.posters.thor2}
+                              alt="Thor: The Dark World"
+                      />
                     </Link>
-                    <Link to="/movie/109"><CoverImg src={this.covers.capitan2}
-                                                   alt="Capitan America: The Winter Soldier"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/109">
+                      <Poster src={this.posters.capitan2}
+                                alt="Capitan America: The Winter Soldier"
+                      />
                     </Link>
-                    <Link to="/movie/110"><CoverImg src={this.covers.guardians}
-                                                   alt="Guardians of the Galaxy"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/110">
+                      <Poster src={this.posters.guardians}
+                                alt="Guardians of the Galaxy"
+                      />
                     </Link>
-                    <Link to="/movie/111"><CoverImg src={this.covers.avengers2}
-                                                   alt="Avengers: Age of Ultron"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/111">
+                      <Poster src={this.posters.avengers2}
+                              alt="Avengers: Age of Ultron"
+                      />
                     </Link>
-                    <Link to="/movie/112"><CoverImg src={this.covers.antman}
-                                                   alt="Ant-Man"
-                                                   onMouseOver=""
-                                                   onMouseOut=""/>
+                    <Link to="/movie/112">
+                      <Poster src={this.posters.antman}
+                              alt="Ant-Man"
+                      />
                     </Link>
+                  <Link to="/movie/113">
+                    <Poster src={this.posters.spiderman}
+                            alt="Spider-Man: Homecoming"
+                  />
+                  </Link>
                 </Div>
             </Fragment>
         )

@@ -53,7 +53,7 @@ class App extends Component {
                 render={() => <Characters/>}
               />
               <Route
-                path="/komiksy"
+                path="/comics"
                 render={() => <ComicsMenu/>}
               />
 

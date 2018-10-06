@@ -11,6 +11,7 @@ import CreateAccount from "../CreateAccount/CreateAccount";
 import ComicsMenu from '../ComicsMenu/ComicsMenu'
 import Movies from "../Movies/Movies";
 import VideoBackground from "../Video_Background/VideoBackground"
+import MoviesMenu from "../MoviesMenu/MoviesMenu";
 
 
 class App extends Component {
@@ -55,6 +56,10 @@ class App extends Component {
               <Route
                 path="/comics"
                 render={() => <ComicsMenu/>}
+              />
+              <Route
+                path="/movies"
+                render={() => <MoviesMenu/>}
               />
 
             {heroes.map((hero => (

@@ -1,6 +1,5 @@
 import React, { Component, Fragment } from 'react'
 import background from './comics_img.png'
-import './ComicsMenu.css'
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 
@@ -135,7 +134,6 @@ class ComicsMenu extends Component {
       </Fragment>
     )
   }
-
 }
 
 export default ComicsMenu

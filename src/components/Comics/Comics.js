@@ -6,9 +6,14 @@ const Div = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-bottom: 30px
+  margin-top: 60px
 `
 const Img = styled.img`
   margin: 15px;
+  width: 450px;
+  padding-top: 20px;
+  height: auto;
   box-shadow: 10px 10px 5px #D3D3D3;
   -o-transition:.5s;
   -ms-transition:.5s;
@@ -20,8 +25,28 @@ const Img = styled.img`
       margin-top: -2px;
       opacity: 0.8
     }
+    
+     @media (min-width: 992px) {
+      width: 300px;
+    }
 `
+
+const ComicsWrapper = styled.div`
+  text-align: center;
+  padding-top: 10px
+
+  @media (min-width: 992px) {
+    width: 400px;
+  }
+`
+
+const Title = styled.div`
+  font-weight: bolder;
+  font-size: 20px;
+`
+
 const makeCoverUrl = comicBook => `${comicBook.thumbnail.path}.${comicBook.thumbnail.extension}`
+const comicsTitle = comicBook => `${comicBook.title}`
 
 class Comics extends Component {
 
@@ -46,9 +71,10 @@ class Comics extends Component {
               comicBook => makeCoverUrl(comicBook) !== urlToDelete
             ).map(
               comicBook => (
-                <div>
+                <ComicsWrapper>
                   <Img src={makeCoverUrl(comicBook)} alt=""/>
-                </div>
+                  <Title>{comicsTitle(comicBook)}</Title>
+                </ComicsWrapper>
               )
             )
           }

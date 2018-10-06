@@ -22,13 +22,13 @@ class NavMenu extends Component {
       {
         render: () => <div className='hidden-div'>Komiksy czytamy</div>,
         label: 'komiksy',
-        href: '/komiksy',
+        href: '/comics',
         iconSrc : ''
       },
       {
         render: () => <div className='hidden-div'>Filmy oglądamy</div>,
         label: 'filmy',
-        href: '/filmy',
+        href: '/movies',
         iconSrc : ''
       }
     ]

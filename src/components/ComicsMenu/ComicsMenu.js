@@ -33,7 +33,8 @@ const Button = styled.button`
   font-family: Montserrat, sans-serif; 
   text-transform: uppercase;
   color: black;
-  font-size: 15px;
+  font-style: italic;
+  font-size: 13px;
   font-weight: lighter;
   margin-left: 15px;
   margin-top: 20px;

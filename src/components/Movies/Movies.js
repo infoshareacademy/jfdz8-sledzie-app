@@ -16,11 +16,15 @@ const Container = styled.div`
   flex-direction: column;
   
     :first-child {
-      margin-top: 100px
+      margin-top: 50px
     }
   
   @media (min-width: 992px) {
     flex-direction: row;
+    
+     :first-child {
+      margin-top: 100px
+    }
   } 
 `
 
@@ -149,12 +153,12 @@ const Div = styled.div`
   }
 `
 const RoundImdb = styled.img`
-  height: 50px;
+  height: 40px;
   padding-right: 15px;
 `
 
 const RoundFilmweb = styled.img`
-  height: 50px
+  height: 40px
 `
 
 class Movies extends Component {

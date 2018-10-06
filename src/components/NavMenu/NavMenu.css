@@ -1,16 +1,20 @@
 .nav {
     width: 100%;
     border-top: solid 1px #626262;
+    background: #fff;
 }
 .nav-bar {
     margin: auto;
-    width: 40%;
-    height: 80px;
+    min-width: 60%;
+    height: 50px;
+}
+.nav-bar-item:first-of-type {
+    margin-left: 20%;
 }
 .nav-bar-item {
     padding-top: 10px;
     display: inline-block;
-    width: 120px;
+    min-width: 20%;
     text-transform: uppercase;
     cursor: pointer;
     text-align: center;
@@ -24,4 +28,7 @@
     height: 100px;
     background: #fff;
     width: 100%;
+}
+route {
+    color: #000;
 }

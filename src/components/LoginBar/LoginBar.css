@@ -1,5 +1,10 @@
+.background-login-bar {
+    background: #fff;
+    width: 100%;
+    height: 100px;
+}
 .login-bar {
-    height: 50px;
+    height: 46px;
     width: 100%;
     background: #3b3b3b;
     border-bottom: 1px solid #626262;

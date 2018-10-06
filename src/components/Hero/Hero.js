@@ -88,6 +88,7 @@ const Ul = styled.div`
 `
 const Button = styled.button`
   text-transform: uppercase;
+  font-family: Montserrat, sans-serif;
   font-style: italic;
   color: black;
   font-size: 13px;

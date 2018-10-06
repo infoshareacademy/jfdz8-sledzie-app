@@ -33,18 +33,20 @@ class LoginBar extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="login-bar">
-          {this.state.user === null ? <button className="btn-sign-in" onClick={this.handleClick}>Zapisz się</button> :
-            <div>
-              <p className="login-bar-user-name">Witaj {this.state.user.email}</p>
-              <Link to="/LogIn" className="btn-sign-out">Wyloguj się</Link>
-            </div>}
-        </div>
-        {this.state.enabled && <LoginForm closeBar={this.handleClick}/>}
-        <div className="logo-bar-container">
-          <a href="/">
-            <img className="login-bar-logo" src={logo} alt=""/>
-          </a>
+        <div className="background-login-bar">
+          <div className="login-bar">
+            {this.state.user === null ? <button className="btn-sign-in" onClick={this.handleClick}>Zapisz się</button> :
+              <div>
+                <p className="login-bar-user-name">Witaj {this.state.user.email}</p>
+                <Link to="/LogIn" className="btn-sign-out">Wyloguj się</Link>
+              </div>}
+          </div>
+          {this.state.enabled && <LoginForm closeBar={this.handleClick}/>}
+          <div className="logo-bar-container">
+            <a href="/">
+              <img className="login-bar-logo" src={logo} alt=""/>
+            </a>
+          </div>
         </div>
       </React.Fragment>
     )

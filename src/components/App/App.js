@@ -12,6 +12,8 @@ import ComicsMenu from '../ComicsMenu/ComicsMenu'
 import MoviesMenu from '../MovieMenu/MovieMenu'
 import Movies from "../Movies/Movies";
 import Movie from '../Movie/Movie'
+import VideoBackground from "../Video_Background/VideoBackground"
+
 
 
 class App extends Component {
@@ -53,7 +55,8 @@ class App extends Component {
               <LoginBar/>
               <NavMenu/>
 
-              <Route exact path="/"/>
+              <Route exact path="/"
+              render={() => <VideoBackground/>}/>
               <Route
                 path="/heroes"
                 render={() => <Characters />}

@@ -12,5 +12,17 @@ span {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
+div.smallHeroes {
+     width: 40%;
+     height: auto;
+     margin: auto;
+     opacity: 0.8;
+ }
+div.smallHeroes:hover {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    opacity: 1;
+}
 
 

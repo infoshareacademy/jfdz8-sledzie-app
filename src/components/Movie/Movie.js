@@ -1,12 +1,10 @@
 import React, { Component, Fragment } from 'react'
 import {database} from "../../firebase";
-import './Movies.css'
 import styled from 'styled-components'
-import filmwebImg from './filmweb_icon.jpg'
-import imdbImg from './imdb.jpg'
-import roundFilmweb from './roundfilmweb.jpg'
-import roundImdb from './roundimdb.png'
-
+import filmwebImg from '../Movies/filmweb_icon.jpg'
+import imdbImg from '../Movies/imdb.jpg'
+import roundFilmweb from '../Movies/roundfilmweb.jpg'
+import roundImdb from '../Movies/roundimdb.png'
 
 const Container = styled.div`
   width: 90%;
@@ -14,20 +12,14 @@ const Container = styled.div`
   margin-bottom: 40px;
   display: flex;
   flex-direction: column;
-  
-    :first-child {
-      margin-top: 50px
-    }
+  margin-top: 50px
   
   @media (min-width: 992px) {
     flex-direction: row;
-    
-     :first-child {
-      margin-top: 100px
+    margin-top: 100px
     }
   } 
 `
-
 const LinkWrapper = styled.div`
   position: absolute;
   bottom: 0;
@@ -161,7 +153,7 @@ const RoundFilmweb = styled.img`
   height: 40px
 `
 
-class Movies extends Component {
+class Movie extends Component {
 
   state = {
     details: null
@@ -172,7 +164,7 @@ class Movies extends Component {
   }
 
   getMoviesDescriptions = () => {
-    database.ref(`/heroes/${this.props.id}`)
+    database.ref(`/movies/${this.props.id}`)
       .once('value')
       .then(snapshot => {
         this.setState({details: snapshot.val()});
@@ -183,50 +175,42 @@ class Movies extends Component {
     return (
       <Fragment>
         <div>
-          {
-            this.state.details && this.state.details.movies.map(
-              movie => (
-                <Fragment>
-                  <Container>
-                    <FlexMovieWrapper>
-                      <MovieWrapper>
-                        <Video  title="movie" allowFullScreen src={`https://www.youtube.com/embed/${movie.url}?showinfo=0`} />
-                      </MovieWrapper>
-                    </FlexMovieWrapper>
-                    <Feature>
-                      <Title>{movie.title}{" "}{movie.year}</Title>
-                      <LinkWrapper>
-                        <a href={movie.imdb} target="_blank">
-                          <ImdbImg src={imdbImg} alt="imdb.com"/>
-                        </a>
-                        <a href={movie.filmweb} target="_blank">
-                          <FilmwebImg src={filmwebImg} alt="filmweb.pl"/>
-                        </a>
-                      </LinkWrapper>
-                      <Div>
-                        <a href={movie.imdb} target="_blank">
-                          <RoundImdb src={roundImdb} alt="imdb.com"/>
-                        </a>
-                        <a href={movie.filmweb} target="_blank">
-                          <RoundFilmweb src={roundFilmweb} alt="filmweb.pl"/>
-                        </a>
-                      </Div>
-                      <br/>
-                      <br/>
-                      <Director>Reżyseria: {movie.directedBy}</Director><br/>
-                      <Description>{movie.description}</Description>
-                    </Feature>
-                  </Container>
-                </Fragment>
-              ))
-          }
+          <Fragment>
+            <Container>
+              <FlexMovieWrapper>
+                <MovieWrapper>
+                  <Video title="movie" allowFullScreen src={`https://www.youtube.com/embed/${this.state.details && this.state.details.url.toString()}?showinfo=0`} />
+                </MovieWrapper>
+              </FlexMovieWrapper>
+              <Feature>
+                <Title>{ this.state.details && this.state.details.title.toString() }{" "}{ this.state.details && this.state.details.year.toString() }</Title>
+                <LinkWrapper>
+                  <a href={ this.state.details && this.state.details.imdb.toString() } target="_blank">
+                    <ImdbImg src={imdbImg} alt="imdb.com"/>
+                  </a>
+                  <a href={ this.state.details && this.state.details.filmweb.toString() } target="_blank">
+                    <FilmwebImg src={filmwebImg} alt="filmweb.pl"/>
+                  </a>
+                </LinkWrapper>
+                <Div>
+                  <a href={ this.state.details && this.state.details.filmweb.toString() } target="_blank">
+                    <RoundImdb src={roundImdb} alt="imdb.com"/>
+                  </a>
+                  <a href={ this.state.details && this.state.details.imdb.toString() } target="_blank">
+                    <RoundFilmweb src={roundFilmweb} alt="filmweb.pl"/>
+                  </a>
+                </Div>
+                <br/>
+                <br/>
+                <Director>Reżyseria: { this.state.details && this.state.details.directedBy.toString() }</Director><br/>
+                <Description>{ this.state.details && this.state.details.description.toString() }</Description>
+              </Feature>
+            </Container>
+          </Fragment>
         </div>
       </Fragment>
-
-
     )
   }
-
 }
 
-export default Movies
+export default Movie

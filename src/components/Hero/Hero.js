@@ -94,6 +94,7 @@ const Button = styled.button`
   font-weight: lighter;
   margin-left: 15px;
   background: white;
+  cursor: pointer;
  
     &:focus {
      outline:0;
@@ -177,7 +178,7 @@ class Hero extends Component {
           <TextDiv>
               <H1 className="hero-name">{name}</H1>
               <FeaturesDiv>
-                <FeatureBar to={`/hero/movies/${this.props.id}`} >Filmy</FeatureBar>
+                <FeatureBar to={`/hero/movies/${this.props.id}`}>Filmy</FeatureBar>
                 <FeatureBar to={`/hero/comics/${this.props.id}`}>Komiksy</FeatureBar>
                 <button className="fav-btn">
                   <i className="fab fa-gratipay" title="Dodaj do ulubionych"/>

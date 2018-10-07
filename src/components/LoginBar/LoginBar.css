@@ -1,6 +1,10 @@
+.background-login-bar {
+    background: #fff;
+    width: 100%;
+    height: 100px;
+}
 .login-bar {
-    position: relative;
-    height: 50px;
+    height: 46px;
     width: 100%;
     background: #3b3b3b;
     border-bottom: 1px solid #626262;
@@ -27,15 +31,12 @@
     background: #000;
 }
 .logo-bar-container {
-    position: absolute;
-    top: 4px;
-    left: 45%;
     display: block;
     margin: auto;
-    /*margin-top: 4px;*/
-    width: 190px;
+    margin-top: 4px;
+    width: 200px;
     height: 100%;
-    /*background: #fff;*/
+    background: #fff;
 }
 .login-bar-logo {
     width: 100%;
@@ -53,13 +54,28 @@
     height: 30px;
     margin-left: 20px;
     margin-top: 10px;
-
     padding: 5px 10px 0 10px;
     color: #fff;
     display: inline-block;
     text-decoration: none;
 }
 .btn-sign-out:hover {
+    background: #ff0000;
+    transition: 0.5s ease-in;
+}
+.login-bar-links {
+    position: absolute;
+    top: 0;
+    right: 2%;
+    margin-top: 14px;
+}
+.link {
+    text-decoration: none;
+    color: #fff;
+    padding: 5px 10px 5px 10px;
+    cursor: pointer;
+}
+.link:hover {
     background: #ff0000;
     transition: 0.5s ease-in;
 }

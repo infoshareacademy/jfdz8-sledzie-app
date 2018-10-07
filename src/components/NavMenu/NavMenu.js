@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
+import logoComics from './comics-logo.jpg';
+import logoMovies from './movies-logo.jpeg';
 import './NavMenu.css';
 import Characters from "../Characters/Characters";
 
@@ -20,13 +22,13 @@ class NavMenu extends Component {
         iconSrc : ''
       },
       {
-        render: () => <div className='hidden-div'>Komiksy czytamy</div>,
+        render: () => <div className='hidden-div'><div className="logo-container"><img className="logo" src={logoComics} alt=""/></div></div>,
         label: 'komiksy',
         href: '/comics',
         iconSrc : ''
       },
       {
-        render: () => <div className='hidden-div'>Filmy oglądamy</div>,
+        render: () => <div className='hidden-div'><div className="logo-container"><img className="logo" src={logoMovies} alt=""/></div></div>,
         label: 'filmy',
         href: '/movies',
         iconSrc : ''

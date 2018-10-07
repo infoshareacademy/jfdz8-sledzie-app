@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import background from './comics_img.png'
+import { fetchFromMarvel } from '../../helpers'
 import styled from 'styled-components'
 import {Link} from "react-router-dom";
 
@@ -104,8 +105,7 @@ class ComicsMenu extends Component {
   }
 
   componentDidMount () {
-    fetch(`https://gateway.marvel.com/v1/public/comics?limit=80&apikey=5b4ca4fb9704024334914e17aabbb5a3`)
-      .then(response => response.json())
+    fetchFromMarvel('comics')
       .then(payload => this.setState({comicsList: payload.data.results}))
   }
 

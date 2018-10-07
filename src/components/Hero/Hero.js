@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { fetchFromMarvel } from '../../helpers'
 import './Hero.css'
 import styled from 'styled-components'
 import { database } from '../../firebase';
@@ -138,8 +139,7 @@ class Hero extends Component {
   }
 
   componentDidMount () {
-    fetch(`https://gateway.marvel.com:443/v1/public/characters/${this.props.id}?apikey=5b4ca4fb9704024334914e17aabbb5a3`)
-      .then(response => response.json())
+    fetchFromMarvel(`characters/${this.props.id}`)
       .then(payload => this.setState({hero: payload.data.results[0]}));
 
     this.getDescriptions();

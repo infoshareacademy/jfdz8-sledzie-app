@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react'
+import { fetchFromMarvel } from '../../helpers'
 import './Comics.css'
 import styled from 'styled-components'
 
@@ -55,8 +56,7 @@ class Comics extends Component {
   }
 
   componentDidMount () {
-    fetch(`https://gateway.marvel.com:443/v1/public/characters/${this.props.id}/comics?apikey=5b4ca4fb9704024334914e17aabbb5a3`)
-      .then(response => response.json())
+    fetchFromMarvel(`characters/${this.props.id}/comics`)
       .then(payload => this.setState({comicBooks: payload.data.results}))
   }
 

@@ -72,7 +72,6 @@ class App extends Component {
                 render={() => <CreateAccount/>}
               />
               <Route
-                key={Date.now()}
                 path="/heroes"
                 render={() => <Characters/>}
               />

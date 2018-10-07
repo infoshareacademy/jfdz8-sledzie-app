@@ -70,8 +70,8 @@ class Comics extends Component {
             this.state.comicBooks.filter(
               comicBook => makeCoverUrl(comicBook) !== urlToDelete
             ).map(
-              comicBook => (
-                <ComicsWrapper>
+              (comicBook, index) => (
+                <ComicsWrapper key={index}>
                   <Img src={makeCoverUrl(comicBook)} alt=""/>
                   <Title>{comicsTitle(comicBook)}</Title>
                 </ComicsWrapper>

@@ -11,7 +11,6 @@ class NavMenu extends Component {
     show: 0,
   };
 
-
   render() {
     const options = [
       null,

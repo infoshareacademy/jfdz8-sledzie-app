@@ -47,6 +47,10 @@ class LoginBar extends Component {
               <img className="login-bar-logo" src={logo} alt=""/>
             </a>
           </div>
+          <div className="login-bar-links">
+            <Link className="link" to="http://sledzie.jfdz8.is-academy.pl/">O projekcie</Link>
+            <Link className="link" to="http://sledzie.jfdz8.is-academy.pl/game.html/">Gra memory</Link>
+          </div>
         </div>
       </React.Fragment>
     )

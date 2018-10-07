@@ -28,7 +28,6 @@ const Header = styled.header`
   width: 100%;
   overflow: hidden;
   position:relative
-
 `
 const Img = styled.img`
   object-fit: contain;
@@ -77,26 +76,6 @@ const HeroImg = styled.img`
     max-height: 100%;
   }
 `
-
-
-// const Button = styled.button`
-//   text-transform: uppercase;
-//   color: black;
-//   font-size: 15px;
-//   font-weight: lighter;
-//   margin-left: 15px;
-//   margin-top: 20px;
-//   background: white;
-//
-//
-//     &:focus {
-//      outline:0;
-//     }
-//
-//     &:hover {
-//     font-weight: bolder
-//     }
-// `
 class Characters extends Component {
 
   state = {
@@ -120,54 +99,69 @@ class Characters extends Component {
             <H1>Superbohaterowie</H1>
           </Header>
         }
-
-        {/*<Link to="/"><Button><span className="arrow left"/>Do głównej</Button></Link>*/}
         <Div className={this.props.smallHeroes && 'smallHeroes'}>
-          <Link to="/hero/1009268"><HeroImg src={this.state.imgDeadpool}
-
-                                        alt=""
-                                        onMouseOver={() => this.setState({imgDeadpool: deadpoolHover})}
-                                        onMouseOut={() => this.setState({imgDeadpool: deadpool})}/>
+          <Link to="/hero/1009268">
+            <HeroImg src={this.state.imgDeadpool}
+                     alt=""
+                     onMouseOver={() => this.setState({imgDeadpool: deadpoolHover})}
+                     onMouseOut={() => this.setState({imgDeadpool: deadpool})}
+            />
           </Link>
-          <Link to="/hero/1009368"><HeroImg src={this.state.imgIronMan}
-                                        alt=""
-                                        onMouseOver={() => this.setState({imgIronMan: ironmanHover})}
-                                        onMouseOut={() => this.setState({imgIronMan: ironman})}/>
+          <Link to="/hero/1009368">
+            <HeroImg src={this.state.imgIronMan}
+                     alt=""
+                     onMouseOver={() => this.setState({imgIronMan: ironmanHover})}
+                     onMouseOut={() => this.setState({imgIronMan: ironman})}
+            />
           </Link>
-          <Link to="/hero/1009282"><HeroImg src={this.state.imgDrStrange}
-                                        alt=""
-                                        onMouseOver={() => this.setState({imgDrStrange: drstrangeHover})}
-                                        onMouseOut={() => this.setState({imgDrStrange: drstrange})}/>
+          <Link to="/hero/1009282">
+            <HeroImg src={this.state.imgDrStrange}
+                     alt=""
+                     onMouseOver={() => this.setState({imgDrStrange: drstrangeHover})}
+                     onMouseOut={() => this.setState({imgDrStrange: drstrange})}
+            />
           </Link>
-          <Link to="/hero/1009351"><HeroImg src={this.state.imgHulk}
-                                        alt=""
-                                        onMouseOver={() => this.setState({imgHulk: hulkHover})}
-                                        onMouseOut={() => this.setState({imgHulk: hulk})}/>
+          <Link to="/hero/1009351">
+            <HeroImg src={this.state.imgHulk}
+                     alt=""
+                     onMouseOver={() => this.setState({imgHulk: hulkHover})}
+                     onMouseOut={() => this.setState({imgHulk: hulk})}
+            />
           </Link>
-          <Link to="/hero/1009610"><HeroImg src={this.state.imgSpiderman}
-                                        alt=""
-                                        onMouseOver={() => this.setState({imgSpiderman: spidermanHover})}
-                                        onMouseOut={() => this.setState({imgSpiderman: spiderman})}/>
+          <Link to="/hero/1009610">
+            <HeroImg src={this.state.imgSpiderman}
+                     alt=""
+                     onMouseOver={() => this.setState({imgSpiderman: spidermanHover})}
+                     onMouseOut={() => this.setState({imgSpiderman: spiderman})}
+            />
           </Link>
-          <Link to="/hero/1009664"><HeroImg src={this.state.imgThor}
-                                        alt=""
-                                        onMouseOver={() => this.setState({imgThor: thorHover})}
-                                        onMouseOut={() => this.setState({imgThor: thor})}/>
+          <Link to="/hero/1009664">
+            <HeroImg src={this.state.imgThor}
+                     alt=""
+                     onMouseOver={() => this.setState({imgThor: thorHover})}
+                     onMouseOut={() => this.setState({imgThor: thor})}
+            />
           </Link>
-          <Link to="/hero/1009652"><HeroImg src={this.state.imgThanos}
-                                        alt=""
-                                        onMouseOver={() => this.setState({imgThanos: thanosHover})}
-                                        onMouseOut={() => this.setState({imgThanos: thanos})}/>
+          <Link to="/hero/1009652">
+            <HeroImg src={this.state.imgThanos}
+                     alt=""
+                     onMouseOver={() => this.setState({imgThanos: thanosHover})}
+                     onMouseOut={() => this.setState({imgThanos: thanos})}
+            />
           </Link>
-          <Link to="/hero/1009220"><HeroImg src={this.state.imgCaptainAmerica}
-                                        alt=""
-                                        onMouseOver={() => this.setState({imgCaptainAmerica: captainamericaHover})}
-                                        onMouseOut={() => this.setState({imgCaptainAmerica: captainamerica})}/>
+          <Link to="/hero/1009220">
+            <HeroImg src={this.state.imgCaptainAmerica}
+                     alt=""
+                     onMouseOver={() => this.setState({imgCaptainAmerica: captainamericaHover})}
+                     onMouseOut={() => this.setState({imgCaptainAmerica: captainamerica})}
+            />
           </Link>
-          <Link to="/hero/1009189"><HeroImg src={this.state.imgBlackWidow}
-                                        alt=""
-                                        onMouseOver={() => this.setState({imgBlackWidow: blackwidowHover})}
-                                        onMouseOut={() => this.setState({imgBlackWidow: blackwidow})}/>
+          <Link to="/hero/1009189">
+            <HeroImg src={this.state.imgBlackWidow}
+                     alt=""
+                     onMouseOver={() => this.setState({imgBlackWidow: blackwidowHover})}
+                     onMouseOut={() => this.setState({imgBlackWidow: blackwidow})}
+            />
           </Link>
         </Div>
      </Fragment>
